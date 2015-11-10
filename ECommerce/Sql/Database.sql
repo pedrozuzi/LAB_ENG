@@ -3,8 +3,8 @@ go
 use ecommerce
 
 
-
 create table cliente(
+
 id int not null,
 nome varchar(100),
 telefone varchar(12),
@@ -56,6 +56,7 @@ primary key(id)
 )
 
 create table itempedido(
+
 valor decimal(7,2) not null
 quantidade int not null,
 idProduto int not null,
@@ -64,3 +65,7 @@ foreign key ( idProduto ) references produto(id)
 foreign key ( idPedido ) references pedido(id)
 
 )
+
+CREATE VIEW v_produtos
+as
+
