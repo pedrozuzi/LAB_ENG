@@ -6,7 +6,7 @@ public class Produto {
 	private String nome;
 	private String descicao;
 	private double valor;
-	private Categoria categoria;
+	private Categoria2 categoria;
 	
 	public int getIdProduto() {
 		return idProduto;
@@ -32,10 +32,10 @@ public class Produto {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public Categoria getCategoria() {
+	public Categoria2 getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(Categoria2 categoria) {
 		this.categoria = categoria;
 	}
 	

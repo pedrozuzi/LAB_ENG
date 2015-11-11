@@ -2,32 +2,32 @@ package persistence;
 
 import java.util.List;
 
-import model.Produto;
+import model.Categoria;
 
-public class ProdutoDaoImpl implements ProdutoDao {
+public class CategoriaDaoImpl implements CategoriaDao {
 
 	@Override
-	public void incluiProduto(Produto prod) {
+	public void incluiCategoria(Categoria cat) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public List<Produto> pesquisaProduto(Produto prod) {
+	public List<Categoria> pesquisaCategoria(Categoria cat) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void alteraProduto(Produto prod) {
+	public void alteraCategoria(Categoria cat) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void excluiProduto(Produto prod) {
+	public void excluiCategoria(Categoria cat) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
