@@ -91,12 +91,12 @@ CREATE VIEW v_categoria
 as
     SELECT 
         cat.nome as Categoria,   
-        categoria.nome as Sub_Categoria
+        sub.nome as Sub_Categoria
     FROM 
-        categoria
+        categoria sub
             INNER JOIN 
             categoria cat 
-            ON categoria.idsubcat 
+            ON sub.idsubcat 
             =  cat.idcat
             
 select * from v_categoria
