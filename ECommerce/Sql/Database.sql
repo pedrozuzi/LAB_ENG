@@ -57,11 +57,11 @@ primary key(id)
 
 create table itempedido(
 
-valor decimal(7,2) not null
+valor decimal(7,2) not null,
 quantidade int not null,
 idProduto int not null,
 idPedido int not null
-foreign key (idProduto) references produto(id)
+foreign key (idProduto) references produto(id),
 foreign key (idPedido) references pedido(id)
 
 )
@@ -75,6 +75,7 @@ primary key (idcat),
 foreign key (idsubcat) references categoria (idcat)
 )
 
+---------------------------------
 insert into categoria values 
 (1,null,'Informatica'),
 (2,null,'Casa'),
@@ -82,6 +83,7 @@ insert into categoria values
 (4,1,'Software'),
 (5,2,'Eletro'),
 (6,2,'Mobilia')
+---------------------------------
 
 /**
 View responsavel pela apresentação das categorias e suas sub-Categorias.
@@ -98,8 +100,8 @@ as
             categoria cat 
             ON sub.idsubcat 
             =  cat.idcat
-            
-select * from v_categoria
+----------------------------            
+select Sub_Categoria from v_categoria where Categoria like 'informatica'
 
 
 
