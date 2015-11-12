@@ -4,8 +4,15 @@ public class Cliente {
 
 	private int idCliente;
 	private String nome;
-	private String endereco;
 	private String telefone;
+	
+	private String cep;
+	private String uf;
+	private String cidade;
+	private String bairro;
+	private String rua;
+	private int num;
+	private String complemento;
 
 	public int getIdCliente() {
 		return idCliente;
