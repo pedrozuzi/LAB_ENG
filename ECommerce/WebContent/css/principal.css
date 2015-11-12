@@ -201,3 +201,31 @@ body,
     top: 0;
     left: 100%;
 }
+
+/* BOTAO */
+
+.but {
+	display: inline-block;
+	background-color: #5B178C;
+	color: #ffffff;
+	padding: 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	border: 0px;
+}	
+
+.but:hover {
+	background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.15));
+	cursor: pointer;
+}
+
+.but-rc {
+	border-radius: 4px;
+}
+
+.login {
+	background-color: #9933cc;
+	color: #ffffff;
+}
