@@ -1,6 +1,7 @@
 package persistence;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 import connection.ConnectionImpl;
@@ -18,8 +19,13 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public void incluiUsuario(Usuario usu) throws SQLException {
+		String query = "insert into usuario values(?,?)";
+		PreparedStatement ps = c.prepareStatement(query);
 		
-		
+		ps.setString(1, usu.getEmail());
+		ps.setString(2, usu.getSenha());
+		ps.execute();
+		ps.close();
 	}
 
 	@Override
