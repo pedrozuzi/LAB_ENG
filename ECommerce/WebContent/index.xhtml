@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Loja Virtual</title>
@@ -12,32 +13,11 @@
 </h:head>
 <h:body>
 
-<div class="header">
-	<h1>Loja</h1>
-	
-	<h:panelGrid columns="3">
-	<input style=" width : 450px; height : 29px;"/>   
-	<h:button name="buscar" value="Buscar" class="but" style="width : 129px; height : 35px;" />
-	<span>
-	<a class="login" href="login.xhtml"> Entre ou Cadastre-se </a> 
-	 </span>
-	</h:panelGrid>
+<div id="cabecalho">
+	<ui:include src="/cabecalho.xhtml" />
 </div>
 
-<div class="menu-container">
-	<ul class="menu clearfix">
-		<li><a href="index.xhtml">Home</a></li>
-		<li><a href="#">Eletrodomestico</a>
-			<ul class="sub-menu">
-				<li><a href="#"> Geladeira </a></li>
-			</ul>
-		</li>
-		<li><a href="#">Informatica</a></li>
-		<li><a href="#">Esporte</a></li>
-		<li><a href="#">Eletronico</a></li>
-	</ul>
-</div>
-
+<h:button> </h:button>
 
 <!--  
 <div id="abas"> 
