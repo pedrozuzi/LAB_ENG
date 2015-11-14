@@ -80,12 +80,18 @@ foreign key (idsubcat) references categoria (idcat)
 
 ---------------------------------
 insert into categoria values 
-(1,null,'Informatica'),
-(2,null,'Casa'),
-(3,1,'Hardware'),
-(4,1,'Software'),
-(5,2,'Eletro'),
-(6,2,'Mobilia')
+(1,null,'Eletrodomestico'),
+(2,null,'Informatica'),
+(3,null,'Esporte'),
+(4,null,'Eletronica'),
+(5,1,'Geladeira'),
+(6,1,'Fogão'),
+(7,2,'Nootbook'),
+(8,2,'Desktop'),
+(9,3,'Futebol'),
+(10,3,'Bicicleta'),
+(11,4,'TV Led'),
+(12,4,'Smart TV')
 ---------------------------------
 
 /**
