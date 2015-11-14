@@ -2,33 +2,42 @@ package persistence;
 
 import java.util.List;
 
+import connection.ConnectionImpl;
+import connection.GenericConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import model.Produto;
 
 public class ProdutoDaoImpl implements ProdutoDao {
 	
 	private Connection c;
 	
-	public ProdutoDaoImp(){
+	public ProdutoDaoImpl(){
 		GenericConnection gc = new ConnectionImpl();
 		c = gc.getConnection();
 	}
 
 	@Override
-	public void incluiProduto(Produto prod) {
+	public void incluiProduto(Produto prod) throws SQLException {
 		String query = "INSERT INTO PRODUTO VALUES (?,?,?,?)";
 		PreparedStatement ps = c.prepareStatement(query);
 
 		ps.setString(1, prod.getNome());
 		ps.setDouble(2, prod.getValor());
-		ps.setString(3, prod.getCategoria().getNome());
+	//	ps.setString(3, prod.getCategoria());
 
 		ps.execute();
 		ps.close();
 		
 	}
 
+	/*
 	@Override
 	public List<Produto> pesquisaProduto(Produto prod) {
+		
 		List<Produto> lista = new ArrayList<Produto>();
 		String query = "select * from produto where id = ?";
 		try {
@@ -56,16 +65,16 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		
 		return lista;
 	}
-
+*/
 	@Override
-	public void alteraProduto(Produto prod) {
+	public void alteraProduto(Produto prod) throws SQLException {
 		
 		String query = "UPDATE produto SET nome = ?, valor = ?, categoria = ? WHERE id = ?";
 		PreparedStatement ps = c.prepareStatement(query);
 
 		ps.setString(1, prod.getNome());
 		ps.setDouble(2, prod.getValor());
-		ps.setString(3, prod.getCategoria().getNome());
+		//ps.setString(3, prod.getCategoria().getNome());
 
 		ps.execute();
 		ps.close();
@@ -76,6 +85,12 @@ public class ProdutoDaoImpl implements ProdutoDao {
 	public void excluiProduto(Produto prod) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Produto> pesquisaProduto(Produto prod) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

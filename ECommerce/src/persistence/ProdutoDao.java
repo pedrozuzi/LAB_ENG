@@ -1,5 +1,6 @@
 package persistence;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import model.Produto;
@@ -8,11 +9,11 @@ import model.Produto;
 
 public interface ProdutoDao {
 
-	void incluiProduto(Produto prod);
+	void incluiProduto(Produto prod) throws SQLException;
 	
 	List<Produto> pesquisaProduto(Produto prod);
 	
-	void alteraProduto(Produto prod);
+	void alteraProduto(Produto prod) throws SQLException;
 	
 	void excluiProduto(Produto prod);
 	

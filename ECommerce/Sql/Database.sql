@@ -24,9 +24,12 @@ create table usuario(
 
 id int not null,
 email VARCHAR(320),
-senha varbinary(32),
+--senha varbinary(32),
+senha varchar(32),
 foreign key ( id ) references cliente(id)
 )
+
+
 --64 characters for the "local part" (username).
 --1 character for the @ symbol.
 --255 characters for the domain name.
