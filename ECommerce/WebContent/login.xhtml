@@ -43,12 +43,14 @@
 				<h:inputText id="email">  </h:inputText>
 				
 				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret value="" id="senha"></h:inputSecret>
+				<h:inputSecret id="senha"></h:inputSecret>
 				
 				<h:outputLabel> <h3> Confirme a Senha :  </h3> </h:outputLabel>
-				<h:inputSecret value=""  id="cSenha"> </h:inputSecret>
-				
-				<h:button name="Cadatrar" value="Cadastrar" class="but" style="height : 35px; width : 99px;"/>
+				<h:inputSecret id="cSenha"> </h:inputSecret>
+				<!--  
+				<h:button name="Cadatrar" value="Cadastrar" class="but" style="height : 35px; width : 99px;"
+							/>-->
+				<h:commandButton action="cadastro.xhtml" value="Cadastrar" class="but"/>
 			</h:panelGrid>
 		</h:form>
 	</div>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Loja Virtual - Cadastro</title>
+
+<link rel="stylesheet" type="text/css" href="css\principal.css" />
+
+</h:head>
+<h:body>
+	<div id="cabecalho">
+		<ui:include src="/cabecalho.xhtml" />
+	</div>
+	
+	<div id="formularioCadastro">
+		<h:form>
+			<h:outputLabel> <h1> Cadastro </h1> </h:outputLabel>
+			<h:panelGrid columns="2" style=" width : 262px;">
+				<h:outputLabel> <h3> Nome :       </h3> </h:outputLabel>
+				<h:inputText id="nome">  </h:inputText>
+				
+				<h:outputLabel> <h3> Telefone :  </h3> </h:outputLabel>
+				<h:inputText id="telefone">  </h:inputText>
+			
+				<h:outputLabel> <h3> CEP :  </h3> </h:outputLabel>
+				<h:inputText id="cep">  </h:inputText>
+			</h:panelGrid>
+			<h:panelGrid columns="6">	
+				<h:outputLabel> <h3> UF :  </h3> </h:outputLabel>
+				<h:inputText id="uf">  </h:inputText>
+				
+				<h:outputLabel> <h3> Cidade :  </h3> </h:outputLabel>
+				<h:inputText id="cidade">  </h:inputText>
+				
+				<h:outputLabel> <h3> Bairro :  </h3> </h:outputLabel>
+				<h:inputText id="bairro">  </h:inputText>
+			</h:panelGrid>
+			<h:panelGrid columns="7">		
+				<h:outputLabel> <h3> Rua :  </h3> </h:outputLabel>
+				<h:inputText id="rua">  </h:inputText>
+				
+				<h:outputLabel> <h3> Número :  </h3> </h:outputLabel>
+				<h:inputText id="numero">  </h:inputText>
+				
+				<h:outputLabel> <h3> Compl :  </h3> </h:outputLabel>
+				<h:inputText id="complemento">  </h:inputText>
+			</h:panelGrid>	
+				<h:commandButton value="Confirmar" class="but"/>
+			<br/>
+		</h:form>
+	</div>
+	
+</h:body>
+</html>
