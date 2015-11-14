@@ -1,6 +1,11 @@
 package model;
 
-public class Usuario {
+import java.io.Serializable;
+
+
+
+
+public class Usuario implements Serializable {
 	
 	private int idUsuario;
 	private String email;
