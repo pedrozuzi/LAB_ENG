@@ -7,6 +7,14 @@ public class Produto {
 	private String descicao;
 	private double valor;
 	private Categoria2 categoria;
+	private String marca;
+	
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
 	
 	public int getIdProduto() {
 		return idProduto;

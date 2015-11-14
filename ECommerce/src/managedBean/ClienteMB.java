@@ -1,6 +1,8 @@
 package managedBean;
 
 import java.io.Serializable;
+import java.sql.SQLException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -30,7 +32,7 @@ public class ClienteMB implements Serializable{
 		cDao = new ClienteDaoImpl();
 	}
 	
-	public String adicionar(){
+	public String adicionar() throws SQLException{
 		String msg="Erro ao cadastrar!";
 		try {
 			cDao.incluiCliente(clienteAtual);

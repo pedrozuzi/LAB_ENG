@@ -14,7 +14,7 @@ import model.Cliente;
 public interface ClienteDao {
 
 
-	void incluiCliente(Cliente cli) throws ClienteDaoException;
+	void incluiCliente(Cliente cli) throws ClienteDaoException, SQLException;
 	
 	List<Cliente> pesquisaCliente(Cliente cli) throws SQLException;
 	

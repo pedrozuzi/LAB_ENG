@@ -53,7 +53,8 @@ id int not null,
 nome varchar (100),
 valor decimal(7,2),
 descricao varchar(max),
-categoria int
+categoria int,
+marca varchar(40)
 primary key(id)
 
 )
