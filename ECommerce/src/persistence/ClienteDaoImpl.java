@@ -9,7 +9,7 @@ import java.util.List;
 
 import connection.ConnectionImpl;
 import connection.GenericConnection;
-
+import control.ClienteDaoException;
 import model.Cliente;
 
 public class ClienteDaoImpl implements ClienteDao {
@@ -22,9 +22,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public void incluiCliente(Cliente cli) throws SQLException {
-		
-		
+	public void incluiCliente(Cliente cli) throws ClienteDaoException {
 		
 	}
 
