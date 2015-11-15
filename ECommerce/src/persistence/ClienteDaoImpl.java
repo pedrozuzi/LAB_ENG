@@ -1,12 +1,12 @@
 package persistence;
 
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 import exception.ClienteDaoException;
@@ -27,7 +27,7 @@ public class ClienteDaoImpl implements ClienteDao {
 		String query = "INSERT INTO CLIENTE"
 				+ "(nome, telefone, cep, uf, cidade, bairro, rua, num, complemento) "
 				+ "VALUES (?,?,?,?,?,?,?,?,?)";
-		PreparedStatement ps = c.prepareStatement(query);
+		PreparedStatement ps = c.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 		
 		//ps.setInt(1, cli.getUsuario().getIdUsuario());
 		//System.out.println(cli.getUsuario().getIdUsuario());
@@ -46,7 +46,6 @@ public class ClienteDaoImpl implements ClienteDao {
 		ResultSet rs = ps.getGeneratedKeys();
 		rs.next();
 		cli.getUsuario().setIdUsuario((rs.getInt(1)));
-		
 		ps.close();
 	}
 
