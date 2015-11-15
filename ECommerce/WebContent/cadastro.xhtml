@@ -21,16 +21,18 @@
 	<div id="formularioCadastro">
 		<h:form>
 			<h:outputLabel> <h1> Cadastro </h1> </h:outputLabel>
-			<h:panelGrid columns="2" style=" width : 262px;">
+			<h:panelGrid columns="3" style=" width : 262px;">
 				<h:outputLabel> <h3> Nome :       </h3> </h:outputLabel>
 				<h:inputText id="nome" value="#{clienteMB.clienteAtual.nome}" style=" width : 177px;">  </h:inputText>
 				<h:message for="nome"/>
 				
 				<h:outputLabel> <h3> Tel :  </h3> </h:outputLabel>
 				<h:inputText id="telefone" value="#{clienteMB.clienteAtual.telefone}" style=" width : 117px;">  </h:inputText>
+				<h:message for="telefone"/>
 			
 				<h:outputLabel> <h3> CEP :  </h3> </h:outputLabel>
 				<h:inputText id="cep" value="#{clienteMB.clienteAtual.cep}" style=" width : 117px;">  </h:inputText>
+				<h:message for="cep"/>
 			</h:panelGrid>
 			<h:panelGrid columns="6">	
 				<h:outputLabel> <h3> UF :  </h3> </h:outputLabel>
@@ -52,7 +54,7 @@
 				<h:outputLabel> <h3> Compl :  </h3> </h:outputLabel>
 				<h:inputText id="complemento" value="#{clienteMB.clienteAtual.complemento}" style=" width : 62px;">  </h:inputText>
 			</h:panelGrid>	
-				<h:commandButton value="Confirmar" class="but" action="#{clienteMB.adicionar()}"/>
+				<h:commandButton value="Confirmar" class="but" action="#{clienteMB.adicionar(usuarioMB.usuario)}"/>
 			<br/>
 		</h:form>
 	</div>

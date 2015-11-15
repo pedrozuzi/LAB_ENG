@@ -40,17 +40,17 @@
 			<h:outputLabel> <h1> Cadastro </h1> </h:outputLabel>
 			<h:panelGrid columns="2" style=" width : 262px;">
 				<h:outputLabel> <h3> Email :  </h3> </h:outputLabel>
-				<h:inputText id="email">  </h:inputText>
+				<h:inputText id="email" value="#{usuarioMB.usuario.email}">  </h:inputText>
 				
 				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret id="senha"></h:inputSecret>
+				<h:inputSecret id="senha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
 				
 				<h:outputLabel> <h3> Confirme a Senha :  </h3> </h:outputLabel>
 				<h:inputSecret id="cSenha"> </h:inputSecret>
-				<!--  
-				<h:button name="Cadatrar" value="Cadastrar" class="but" style="height : 35px; width : 99px;"
-							/>-->
-				<h:commandButton action="cadastro.xhtml" value="Cadastrar" class="but"/>
+
+				<h:commandButton action="cadastro.xhtml" value="Cadastrar" class="but"> 
+					<f:setPropertyActionListener value="#{usuarioMB.usuario}" target="#{usuarioMB.usuario}" />
+				</h:commandButton>
 			</h:panelGrid>
 		</h:form>
 	</div>
