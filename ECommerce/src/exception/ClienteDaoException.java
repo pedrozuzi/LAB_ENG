@@ -1,4 +1,4 @@
-package control;
+package exception;
 
 public class ClienteDaoException extends Exception {
 	private static final long serialVersionUID = -3979274304303121982L;

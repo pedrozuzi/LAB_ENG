@@ -7,7 +7,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import control.ClienteDaoException;
+
+import exception.ClienteDaoException;
 import model.Cliente;
 import persistence.ClienteDao;
 import persistence.ClienteDaoImpl;
