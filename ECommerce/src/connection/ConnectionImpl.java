@@ -28,13 +28,17 @@ public class ConnectionImpl implements GenericConnection {
 			Class.forName("net.sourceforge.jtds.jdbc.Driver");
 			con = DriverManager.getConnection(
 					"jdbc:jtds:sqlserver://localhost:1433;"
-							+"DatabaseName=ludpet;namedPipe=true",
+							+"DatabaseName=ecommerce;namedPipe=true",
 							"sa", "senha");
+			System.out.println("CONECTADO");
 		} catch (ClassNotFoundException e) {
+			System.out.println("classe nao encontrada");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
 		} catch (SQLException e) {
+			System.out.println("sql");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
+			System.out.println("exception");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
 		}
 		return con;

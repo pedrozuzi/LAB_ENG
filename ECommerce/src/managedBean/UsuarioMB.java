@@ -21,8 +21,8 @@ public class UsuarioMB implements Serializable {
 	}
 	
 	public String adiciona() {
+		
 		return "";
-		//TODO
 	}
 	
 	public void altera() {
@@ -37,5 +37,12 @@ public class UsuarioMB implements Serializable {
 	public void exclui(Usuario usu) {
 
 	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 }
