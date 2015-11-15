@@ -2,13 +2,22 @@ create database ecommerce
 go
 use ecommerce
 
+drop database ecommerce
+
+
+create table usuario(
+
+id int not null identity primary key,
+email VARCHAR(320),
+--senha varbinary(32),
+senha varchar(32),
+)
 
 create table cliente(
-
-id int not null,
+id int not null identity,
+idUsuario int,
 nome varchar(100),
 telefone varchar(12),
-
 cep varchar(8),
 uf varchar(2),
 cidade varchar(20),
@@ -16,19 +25,17 @@ bairro varchar(20),
 rua varchar (50),
 num int,
 complemento varchar(10) 
-
+foreign key (idUsuario) references usuario(id)
 primary key(id)
 )
 
-create table usuario(
+select * from usuario
+select * from cliente
+delete usuario
+delete cliente
 
-id int not null,
-email VARCHAR(320),
---senha varbinary(32),
-senha varchar(32),
-foreign key ( id ) references cliente(id)
-)
-
+insert into cliente values
+(3, 'Pedro', '1111', '11111', 'sp', 'sao paulo', 'bairro', 'rua', 1, '12')
 
 --64 characters for the "local part" (username).
 --1 character for the @ symbol.

@@ -24,10 +24,13 @@ public class ClienteDaoImpl implements ClienteDao {
 	@Override
 	public void incluiCliente(Cliente cli) throws ClienteDaoException, SQLException {
 
-		String query = "INSERT INTO CLIENTE VALUES (?,?,?,?,?,?,?,?,?,?)";
+		String query = "INSERT INTO CLIENTE"
+				+ "(nome, telefone, cep, uf, cidade, bairro, rua, num, complemento) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = c.prepareStatement(query);
 		
-		ps.setInt(10, cli.getUsuario().getIdUsuario());
+		//ps.setInt(1, cli.getUsuario().getIdUsuario());
+		//System.out.println(cli.getUsuario().getIdUsuario());
 		ps.setString(1, cli.getNome());
 		ps.setString(2, cli.getTelefone());
 		ps.setString(3, cli.getCep());
@@ -39,6 +42,11 @@ public class ClienteDaoImpl implements ClienteDao {
 		ps.setString(9, cli.getComplemento());
 		
 		ps.execute();
+		
+		ResultSet rs = ps.getGeneratedKeys();
+		rs.next();
+		cli.getUsuario().setIdUsuario((rs.getInt(1)));
+		
 		ps.close();
 	}
 
