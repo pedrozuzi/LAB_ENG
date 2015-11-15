@@ -21,22 +21,9 @@ public class ClienteDaoImpl implements ClienteDao {
 		c = gc.getConnection();
 	}
 
-	/**
-	 * create table cliente(
-	 * 
-	 * id int not null, nome varchar(100), telefone varchar(12),
-	 * 
-	 * cep varchar(8), uf varchar(2), cidade varchar(20), bairro varchar(20),
-	 * rua varchar (50), num int, complemento varchar(10)
-	 * 
-	 * primary key(id) )
-	 * 
-	 * @throws SQLException
-	 */
-
 	@Override
 	public void incluiCliente(Cliente cli) throws ClienteDaoException, SQLException {
-		
+
 		String query = "INSERT INTO CLIENTE VALUES (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = c.prepareStatement(query);
 
@@ -67,6 +54,15 @@ public class ClienteDaoImpl implements ClienteDao {
 				Cliente c = new Cliente();
 
 				c.setIdCliente(rs.getInt("id"));
+				c.setNome(rs.getString("nome"));
+				c.setTelefone(rs.getString("telefone"));
+				c.setCep(rs.getString("cep"));
+				c.setUf(rs.getString("uf"));
+				c.setCidade(rs.getString("cidade"));
+				c.setBairro(rs.getString("bairro"));
+				c.setRua(rs.getString("rua"));
+				c.setNum(rs.getInt("num"));
+				c.setComplemento(rs.getString("complemento"));
 
 				lista.add(c);
 			}
@@ -80,10 +76,20 @@ public class ClienteDaoImpl implements ClienteDao {
 
 	@Override
 	public void alteraCliente(Cliente cli) throws SQLException {
-		String query = "UPDATE cliente SET nome = ? WHERE id = ?";
+		String query = "UPDATE cliente SET nome = ?, telefone=?, cep=?, uf=?, cidade=?,"
+				+ " bairro=?, rua=?, num=?, complemento=? WHERE id = ?";
 		PreparedStatement ps = c.prepareStatement(query);
 
 		ps.setString(1, cli.getNome());
+		ps.setString(2, cli.getTelefone());
+		ps.setString(3, cli.getCep());
+		ps.setString(4, cli.getUf());
+		ps.setString(5, cli.getCidade());
+		ps.setString(6, cli.getBairro());
+		ps.setString(7, cli.getRua());
+		ps.setInt(8, cli.getNum());
+		ps.setString(9, cli.getComplemento());
+		ps.setInt(10, cli.getIdCliente());
 
 		ps.execute();
 		ps.close();
