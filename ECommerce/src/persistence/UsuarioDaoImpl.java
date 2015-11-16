@@ -2,9 +2,12 @@ package persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 import model.Usuario;
@@ -37,12 +40,17 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	public void incluiUsuario(Usuario usu) throws SQLException {
 		
 		String query = "insert into usuario values(?,?)";
-		PreparedStatement ps = c.prepareStatement(query);
+		PreparedStatement ps = c.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
 		ps.setString(1, usu.getEmail());
 		ps.setString(2, usu.getSenha());
 		
 		ps.execute();
+		
+		ResultSet rs = ps.getGeneratedKeys();
+		rs.next();
+		usu.setIdUsuario(rs.getInt(1));
+		
 		ps.close();
 	}
 

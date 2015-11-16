@@ -1,6 +1,5 @@
 package persistence;
 
-import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,28 +23,23 @@ public class ClienteDaoImpl implements ClienteDao {
 	@Override
 	public void incluiCliente(Cliente cli) throws ClienteDaoException, SQLException {
 
-		String query = "INSERT INTO CLIENTE"
-				+ "(nome, telefone, cep, uf, cidade, bairro, rua, num, complemento) "
-				+ "VALUES (?,?,?,?,?,?,?,?,?)";
-		PreparedStatement ps = c.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+		String query = "INSERT INTO CLIENTE VALUES (?,?,?,?,?,?,?,?,?,?)";
+		PreparedStatement ps = c.prepareStatement(query);
 		
-		//ps.setInt(1, cli.getUsuario().getIdUsuario());
-		//System.out.println(cli.getUsuario().getIdUsuario());
-		ps.setString(1, cli.getNome());
-		ps.setString(2, cli.getTelefone());
-		ps.setString(3, cli.getCep());
-		ps.setString(4, cli.getUf());
-		ps.setString(5, cli.getCidade());
-		ps.setString(6, cli.getBairro());
-		ps.setString(7, cli.getRua());
-		ps.setInt(8, cli.getNum());
-		ps.setString(9, cli.getComplemento());
+		ps.setInt(1, cli.getUsuario().getIdUsuario());
+		ps.setString(2, cli.getNome());
+		ps.setString(3, cli.getTelefone());
+		ps.setString(4, cli.getCep());
+		ps.setString(5, cli.getUf());
+		ps.setString(6, cli.getCidade());
+		ps.setString(7, cli.getBairro());
+		ps.setString(8, cli.getRua());
+		ps.setInt(9, cli.getNum());
+		ps.setString(10, cli.getComplemento());
 		
 		ps.execute();
 		
-		ResultSet rs = ps.getGeneratedKeys();
-		rs.next();
-		cli.getUsuario().setIdUsuario((rs.getInt(1)));
+		
 		ps.close();
 	}
 
