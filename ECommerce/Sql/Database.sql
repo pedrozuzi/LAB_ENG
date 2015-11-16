@@ -29,13 +29,7 @@ foreign key (idUsuario) references usuario(id)
 primary key(id)
 )
 
-select * from usuario
-select * from cliente
-delete usuario
-delete cliente
 
-insert into cliente values
-(3, 'Pedro', '1111', '11111', 'sp', 'sao paulo', 'bairro', 'rua', 1, '12')
 
 --64 characters for the "local part" (username).
 --1 character for the @ symbol.
@@ -101,6 +95,15 @@ insert into categoria values
 (11,4,'TV Led'),
 (12,4,'Smart TV')
 ---------------------------------
+select * from usuario
+select * from cliente
+delete usuario
+delete cliente
+
+insert into cliente values
+(3, 'Pedro', '1111', '11111', 'sp', 'sao paulo', 'bairro', 'rua', 1, '12')
+
+---------
 
 /**
 View responsavel pela apresentação das categorias e suas sub-Categorias.
