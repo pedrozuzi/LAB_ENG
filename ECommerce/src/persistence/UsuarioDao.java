@@ -15,4 +15,6 @@ public interface UsuarioDao {
 	
 	void excluiUsuario (Usuario usu) throws SQLException;
 	
+	boolean realizarLogin( Usuario u ) throws SQLException;
+	
 }

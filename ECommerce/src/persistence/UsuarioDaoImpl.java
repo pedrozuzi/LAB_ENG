@@ -91,4 +91,21 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		ps.close();
 	}
 
+	@Override
+	public boolean realizarLogin(Usuario u) throws SQLException {
+		String query = "select email, senha from usuario where email = ? and senha= ?";
+		PreparedStatement ps = c.prepareStatement(query);
+		
+		ps.setString(1, u.getEmail());
+		ps.setString(2, u.getSenha());
+		
+		ResultSet rs = ps.executeQuery();
+		if ( rs.next() ) {
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+
 }

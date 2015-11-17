@@ -33,11 +33,7 @@ public class ClienteMB implements Serializable{
 	public String adicionar(Usuario u) throws SQLException{
 		String msg="Erro ao cadastrar!";
 		try {
-			System.out.println(u.getEmail());
-			System.out.println(u.getIdUsuario());
 			uDao.incluiUsuario(u);
-			System.out.println(u.getEmail());
-			System.out.println(u.getIdUsuario());
 			clienteAtual.setUsuario(u);
 			cDao.incluiCliente(clienteAtual);
 			msg = "Cadastro concluído com sucesso!";
