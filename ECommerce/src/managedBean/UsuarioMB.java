@@ -1,10 +1,11 @@
 package managedBean;
 
 import java.io.Serializable;
-
+import java.sql.SQLException;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+import javax.faces.context.FacesContext;
 import persistence.UsuarioDao;
 import persistence.UsuarioDaoImpl;
 import model.Usuario;
@@ -23,6 +24,15 @@ public class UsuarioMB implements Serializable {
 	
 	public String realizarLogin() {
 		String msg="Usuário ou senha inválido!";
+		try {
+			if (!uDao.realizarLogin(usuario)) {
+				usuario = new Usuario();
+				FacesContext fc = FacesContext.getCurrentInstance();
+				fc.addMessage( "", new FacesMessage( msg ) );
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return "";
 		
 	}
