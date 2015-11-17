@@ -28,12 +28,12 @@
 			<h:outputLabel> <h1> Login </h1> </h:outputLabel>
 			<h:panelGrid columns="3" style=" width : 262px;">
 				<h:outputLabel> <h3> Email :  </h3> </h:outputLabel>
-				<h:inputText id="email" value="#{usuarioMB.usuario.email}">  </h:inputText>
-				<h:message for="email"/>
+				<h:inputText id="lemail" value="#{usuarioMB.usuario.email}">  </h:inputText>
+				<h:message for="lemail"/>
 				
 				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret id="senha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
-				<h:message for="senha"/>
+				<h:inputSecret id="lsenha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
+				<h:message for="lsenha"/>
 				
 				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but"/>
 			</h:panelGrid>
