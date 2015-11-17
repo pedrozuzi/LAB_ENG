@@ -20,18 +20,22 @@
 	<ui:include src="/cabecalho.xhtml" />
 </div>
 
+<h:messages/>
+
 <div id="container">
 	<div id="logar" class="formulario">
 		<h:form>
 			<h:outputLabel> <h1> Login </h1> </h:outputLabel>
-			<h:panelGrid columns="2" style=" width : 262px;">
+			<h:panelGrid columns="3" style=" width : 262px;">
 				<h:outputLabel> <h3> Email :  </h3> </h:outputLabel>
-				<h:inputText value="#{usuarioMB.usuario.email}" id="email">  </h:inputText>
+				<h:inputText id="email" value="#{usuarioMB.usuario.email}">  </h:inputText>
+				<h:message for="email"/>
 				
 				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret value="#{usuarioMB.usuario.senha}" id="senha"></h:inputSecret>
+				<h:inputSecret id="senha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
+				<h:message for="senha"/>
 				
-				<h:commandButton value="Entrar" class="but"/>
+				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but"/>
 			</h:panelGrid>
 		</h:form>
 	</div>
