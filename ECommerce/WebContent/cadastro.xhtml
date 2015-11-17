@@ -27,16 +27,16 @@
 				<h:message for="nome"/>
 				
 				<h:outputLabel> <h3> Tel :  </h3> </h:outputLabel>
-				<h:inputText id="telefone" value="#{clienteMB.clienteAtual.telefone}" style=" width : 117px;">  </h:inputText>
+				<h:inputText id="telefone" value="#{clienteMB.clienteAtual.telefone}" size="9" required="true" style=" width : 117px;" ></h:inputText>
 				<h:message for="telefone"/>
 			
 				<h:outputLabel> <h3> CEP :  </h3> </h:outputLabel>
-				<h:inputText id="cep" value="#{clienteMB.clienteAtual.cep}" style=" width : 117px;">  </h:inputText>
+				<h:inputText id="cep" value="#{clienteMB.clienteAtual.cep}" style=" width : 117px;" size="8">  </h:inputText>
 				<h:message for="cep"/>
 			</h:panelGrid>
 			<h:panelGrid columns="6">	
 				<h:outputLabel> <h3> UF :  </h3> </h:outputLabel>
-				<h:inputText id="uf" value="#{clienteMB.clienteAtual.uf}" style=" width : 56px;">  </h:inputText>
+				<h:inputText id="uf" value="#{clienteMB.clienteAtual.uf}" style=" width : 56px;" size="2">  </h:inputText>
 				
 				<h:outputLabel> <h3> Cidade :  </h3> </h:outputLabel>
 				<h:inputText id="cidade" value="#{clienteMB.clienteAtual.cidade}">  </h:inputText>
