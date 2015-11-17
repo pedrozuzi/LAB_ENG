@@ -100,20 +100,22 @@ insert into categoria values
 insert into produto values
 (1,'geladeira',1500,'com geloplux',5,'consul','geladeira1.jpg'),
 (2,'geladeira',1100,'sem geloplux',5,'eletrolux','geladeira2.jpg'),
-(3,'fogão',900,'eletrico',6,'marca','fogao1'),
-(4,'fogão',700,'gas encanado',6,'macra','fogao2'),
-(5,'nootbook',2000,'I7 4° geração',7,'marca','nootbook1'),
-(6,'nootbook',1200,'celeron',7,'marca','nootbook2'),
-(7,'desktop',3000,'PC Gamer',8,'marca','desktop1'),
-(8,'desktop',1500,'i3',8,'marca','desktop2'),
-(9,'futebol',50,'Camisa Argentina',9,'marca','futebol1'),
-(10,'futebol',120,'Camisa Brasil',9,'marca','futebol2'),
-(11,'bicicleta',400,'aro 26',10,'marca','bicicleta1'),
-(12,'bicicleta',690,'aro 24 equipada',10,'marca','bicicleta2'),
-(13,'tv led',3000,'2k',11,'marca','tvled1'),
-(14,'tv led',5000,'4k',11,'marca','tvled2'),
-(15,'smart tv',6500,'Android',12,'marca','smart1'),
-(16,'smart tv',6000,'wifi',7,'marca','smart2')
+(3,'fogão',900,'eletrico',6,'marca','fogao1.jpg'),
+(4,'fogão',700,'gas encanado',6,'macra','fogao2.jpg'),
+(5,'nootbook',2000,'I7 4° geração',7,'marca','nootbook1.jpg'),
+(6,'nootbook',1200,'celeron',7,'marca','nootbook2.jpg'),
+(7,'desktop',3000,'PC Gamer',8,'marca','desktop1.jpg'),
+(8,'desktop',1500,'i3',8,'marca','desktop2.jpg'),
+(9,'futebol',50,'Camisa Argentina',9,'marca','futebol1.jpg'),
+(10,'futebol',120,'Camisa Brasil',9,'marca','futebol2.jpg'),
+(11,'bicicleta',400,'aro 26',10,'marca','bicicleta1.jpg'),
+(12,'bicicleta',690,'aro 24 equipada',10,'marca','bicicleta2.jpg'),
+(13,'tv led',3000,'2k',11,'marca','tvled1.jpg'),
+(14,'tv led',5000,'4k',11,'marca','tvled2.jpg'),
+(15,'smart tv',6500,'Android',12,'marca','smart1.jpg'),
+(16,'smart tv',6000,'wifi',7,'marca','smart2.jpg')
+
+-----------------------
 
 
 --------------------------------
