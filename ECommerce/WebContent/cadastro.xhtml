@@ -23,20 +23,20 @@
 			<h:outputLabel> <h1> Cadastro </h1> </h:outputLabel>
 			<h:panelGrid columns="3" style=" width : 262px;">
 				<h:outputLabel> <h3> Nome :       </h3> </h:outputLabel>
-				<h:inputText id="nome" value="#{clienteMB.clienteAtual.nome}" style=" width : 177px;">  </h:inputText>
+				<h:inputText id="nome"  maxlength="100" value="#{clienteMB.clienteAtual.nome}" style=" width : 177px;">  </h:inputText>
 				<h:message for="nome"/>
 				
 				<h:outputLabel> <h3> Tel :  </h3> </h:outputLabel>
-				<h:inputText id="telefone" value="#{clienteMB.clienteAtual.telefone}" size="9" required="true" style=" width : 117px;" ></h:inputText>
+				<h:inputText id="telefone" maxlength="9" value="#{clienteMB.clienteAtual.telefone}" style=" width : 117px;" ></h:inputText>
 				<h:message for="telefone"/>
 			
 				<h:outputLabel> <h3> CEP :  </h3> </h:outputLabel>
-				<h:inputText id="cep" value="#{clienteMB.clienteAtual.cep}" style=" width : 117px;" size="8">  </h:inputText>
+				<h:inputText id="cep" maxlength="8" value="#{clienteMB.clienteAtual.cep}" style=" width : 117px;" >  </h:inputText>
 				<h:message for="cep"/>
 			</h:panelGrid>
 			<h:panelGrid columns="6">	
 				<h:outputLabel> <h3> UF :  </h3> </h:outputLabel>
-				<h:inputText id="uf" value="#{clienteMB.clienteAtual.uf}" style=" width : 56px;" size="2">  </h:inputText>
+				<h:inputText id="uf" maxlength="2" value="#{clienteMB.clienteAtual.uf}" style=" width : 56px;">  </h:inputText>
 				
 				<h:outputLabel> <h3> Cidade :  </h3> </h:outputLabel>
 				<h:inputText id="cidade" value="#{clienteMB.clienteAtual.cidade}">  </h:inputText>
