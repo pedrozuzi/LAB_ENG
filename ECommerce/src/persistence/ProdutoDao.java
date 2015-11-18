@@ -11,10 +11,10 @@ public interface ProdutoDao {
 
 	void incluiProduto(Produto prod) throws SQLException;
 	
-	List<Produto> pesquisaProduto(Produto prod);
+	List<Produto> pesquisaProduto(Produto prod) throws SQLException;
 	
 	void alteraProduto(Produto prod) throws SQLException;
 	
-	void excluiProduto(Produto prod);
+	void excluiProduto(Produto prod) throws SQLException;
 	
 }
