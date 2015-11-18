@@ -1,5 +1,10 @@
 package model;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name = "produto")
+@ApplicationScoped
 public class Produto {
 	
 	private int idProduto;

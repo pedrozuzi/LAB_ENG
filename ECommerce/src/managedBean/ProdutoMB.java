@@ -1,6 +1,9 @@
 package managedBean;
 
 import java.io.Serializable;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -9,7 +12,7 @@ import model.Produto;
 import persistence.ProdutoDao;
 import persistence.ProdutoDaoImpl;
 
-@ManagedBean
+@ManagedBean(name ="produtos")
 @SessionScoped
 public class ProdutoMB implements Serializable {
 	
@@ -27,8 +30,12 @@ public class ProdutoMB implements Serializable {
 		
 	}
 	
-	void carregaProdrutoCategoria(int categoria){
-		
+	public List<Produto> carregaProdrutoCategoria(int categoria) throws SQLException{
+		List<Produto> lista = new ArrayList<Produto>();
+		 lista=pDao.pesquisaProdutoCategoria(categoria);
+		 
+		 
+		 return lista;
 	}
 	
 	void caregaProdutoUnico(int id){
