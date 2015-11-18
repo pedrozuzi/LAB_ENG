@@ -20,6 +20,16 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		c = gc.getConnection();
 	}
 
+	/*
+id int not null,
+nome varchar (100),
+valor decimal(7,2),
+descricao varchar(max),
+categoria int,
+marca varchar(40),
+imagem varchar(40) 
+	 */
+	
 	@Override
 	public void incluiProduto(Produto prod) throws SQLException {
 		String query = "INSERT INTO PRODUTO VALUES (?,?,?,?)";
@@ -27,7 +37,10 @@ public class ProdutoDaoImpl implements ProdutoDao {
 
 		ps.setString(1, prod.getNome());
 		ps.setDouble(2, prod.getValor());
-	//	ps.setString(3, prod.getCategoria());
+		ps.setString(3, prod.getDescicao());
+	    ps.setInt(4, prod.getCategoria());
+	    ps.setString(5, prod.getMarca());
+	    
 
 		ps.execute();
 		ps.close();

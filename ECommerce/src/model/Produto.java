@@ -6,9 +6,24 @@ public class Produto {
 	private String nome;
 	private String descicao;
 	private double valor;
-	private Categoria2 categoria;
+	private int categoria;
 	private String marca;
+	private String imagem;
 	
+	
+	
+	public int getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(int categoria) {
+		this.categoria = categoria;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 	public String getMarca() {
 		return marca;
 	}
@@ -40,11 +55,6 @@ public class Produto {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public Categoria2 getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(Categoria2 categoria) {
-		this.categoria = categoria;
-	}
+
 	
 }
