@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Loja Virtual</title>
@@ -15,9 +16,22 @@
 	<h:panelGrid columns="3">
 	<input style=" width : 450px; height : 29px;"/>   
 	<h:button name="buscar" value="Buscar" class="but" style="width : 129px; height : 35px;" />
-	<span>
-	<a class="login" href="login.xhtml"> Entre ou Cadastre-se </a> 
-	 </span>
+	<h:form>
+	<p:commandLink id="lc" action="login.xhtml" value="#" class="login" />
+	</h:form>
+	<!--  
+		<h:form>
+	<p:growl id="mensagem" showDetail="true"></p:growl>
+	<p:commandButton value="E" actionListener="#{dialogView.destroyWorld}" update="message">
+        <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+    </p:commandButton>
+ 
+    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+	</h:form>
+-->
 	</h:panelGrid>
 </div>
 
