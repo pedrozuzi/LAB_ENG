@@ -3,8 +3,8 @@ package managedBean;
 import java.io.Serializable;
 import java.sql.SQLException;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import model.Cliente;
 import model.Usuario;
@@ -15,7 +15,7 @@ import persistence.UsuarioDaoImpl;
 import exception.ClienteDaoException;
 
 @ManagedBean
-@ApplicationScoped
+@SessionScoped
 public class ClienteMB implements Serializable{
 	private static final long serialVersionUID = -4203711507524977641L;
 	private Cliente clienteAtual;
@@ -35,12 +35,12 @@ public class ClienteMB implements Serializable{
 			clienteAtual.setUsuario(u);
 			cDao.incluiCliente(clienteAtual);
 			msg = "Cadastro concluído com sucesso!";
+			FacesContext fc = FacesContext.getCurrentInstance();
+			fc.addMessage( "", new FacesMessage( msg ) );
+			return "index.xhtml";
 		} catch (ClienteDaoException e) {
 			e.printStackTrace();
 		}
-		//clienteAtual = new Cliente();
-		FacesContext fc = FacesContext.getCurrentInstance();
-		fc.addMessage( "", new FacesMessage( msg ) );
 		return "";
 	}
 	

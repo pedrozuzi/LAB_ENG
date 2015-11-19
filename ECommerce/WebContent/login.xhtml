@@ -36,6 +36,7 @@
 				<h:message for="lsenha"/>
 				
 				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but">
+					<f:setPropertyActionListener value="#{clienteMB.clienteAtual}" target="#{clienteMB.clienteAtual}" />
 				</h:commandButton>	
 			</h:panelGrid>
 		</h:form>
