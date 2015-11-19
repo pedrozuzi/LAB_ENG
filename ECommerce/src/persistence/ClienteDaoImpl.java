@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Cliente;
+import model.Usuario;
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 import exception.ClienteDaoException;
-import model.Cliente;
 
 public class ClienteDaoImpl implements ClienteDao {
 
@@ -107,6 +109,33 @@ public class ClienteDaoImpl implements ClienteDao {
 
 		ps.execute();
 		ps.close();
+	}
+
+	@Override
+	public Cliente getClienteByIdUsuario(int id) throws SQLException {
+		Cliente cli = new Cliente();
+		String query = "select * from cliente where idUsuario = ?";
+		
+		PreparedStatement ps = c.prepareStatement(query);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		if ( rs.next() ) {
+			Usuario u = new Usuario();
+			u.setIdUsuario(rs.getInt("idUsuario"));
+			cli.setIdCliente(rs.getInt("id"));
+			cli.setUsuario(u);
+			cli.setNome(rs.getString("nome"));
+			cli.setTelefone(rs.getString("telefone"));
+			cli.setCep(rs.getString("cep"));
+			cli.setUf(rs.getString("uf"));
+			cli.setCidade(rs.getString("cidade"));
+			cli.setBairro(rs.getString("bairro"));
+			cli.setRua(rs.getString("rua"));
+			cli.setNum(rs.getInt("num"));
+			cli.setComplemento(rs.getString("complemento"));
+		}
+		return cli;
 	}
 
 }

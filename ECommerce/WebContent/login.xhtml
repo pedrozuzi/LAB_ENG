@@ -35,7 +35,8 @@
 				<h:inputSecret id="lsenha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
 				<h:message for="lsenha"/>
 				
-				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but"/>
+				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but">
+				</h:commandButton>	
 			</h:panelGrid>
 		</h:form>
 	</div>

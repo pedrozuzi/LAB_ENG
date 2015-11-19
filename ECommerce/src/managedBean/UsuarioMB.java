@@ -16,8 +16,7 @@ public class UsuarioMB implements Serializable {
 	private static final long serialVersionUID = -7952903320250248386L;
 	private Usuario usuario;
 	private UsuarioDao uDao;
-	private boolean logado = true;
-	private String msg = "Entre ou cadastra-se";
+	private boolean logado = false;
 	
 	public UsuarioMB() {
 		usuario = new Usuario();
@@ -31,6 +30,11 @@ public class UsuarioMB implements Serializable {
 				usuario = new Usuario();
 				FacesContext fc = FacesContext.getCurrentInstance();
 				fc.addMessage( "", new FacesMessage( msg ) );
+				setLogado(false);
+				return "";
+			}else{
+				setLogado(true);
+				return"index.xhtml";
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -55,14 +59,24 @@ public class UsuarioMB implements Serializable {
 		this.logado = logado;
 	}
 
-	public String getMsg() {
+	public boolean naoLogado(){
 		if (logado) {
-			return "Olá Usuário";
+			return false;
+		}else{
+			return true;
 		}
-		return msg;
 	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
+	
+	public boolean Logado(){
+		if (logado) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public String logOff(){
+		setLogado(false);
+		return"index.xhtml";
 	}
 }

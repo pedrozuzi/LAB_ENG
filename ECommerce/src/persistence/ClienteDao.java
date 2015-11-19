@@ -23,6 +23,6 @@ public interface ClienteDao {
 	
 	void excluiCliente(Cliente cli) throws SQLException;
 	
-	
+	Cliente getClienteByIdUsuario(int id) throws SQLException;
 	
 }

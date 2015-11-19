@@ -2,12 +2,10 @@ package managedBean;
 
 import java.io.Serializable;
 import java.sql.SQLException;
-
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import model.Cliente;
 import model.Usuario;
 import persistence.ClienteDao;
@@ -17,7 +15,7 @@ import persistence.UsuarioDaoImpl;
 import exception.ClienteDaoException;
 
 @ManagedBean
-@SessionScoped
+@ApplicationScoped
 public class ClienteMB implements Serializable{
 	private static final long serialVersionUID = -4203711507524977641L;
 	private Cliente clienteAtual;
@@ -40,7 +38,7 @@ public class ClienteMB implements Serializable{
 		} catch (ClienteDaoException e) {
 			e.printStackTrace();
 		}
-		clienteAtual = new Cliente();
+		//clienteAtual = new Cliente();
 		FacesContext fc = FacesContext.getCurrentInstance();
 		fc.addMessage( "", new FacesMessage( msg ) );
 		return "";

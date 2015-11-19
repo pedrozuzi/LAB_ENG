@@ -17,7 +17,18 @@
 	<input style=" width : 450px; height : 29px;"/>   
 	<h:button name="buscar" value="Buscar" class="but" style="width : 129px; height : 35px;" />
 	<h:form>
-	<p:commandLink id="lc" action="login.xhtml" value="#{usuarioMB.msg}" class="login" />
+	<p:commandLink id="lc" action="login.xhtml" value="Entre ou Cadastre-se" class="login" rendered="#{usuarioMB.naoLogado()}"/>
+	<h:form>
+    <p:growl id="messages" showDetail="true"/>
+ 
+    <p:menuButton value="#{usuarioMB.usuario.email}" rendered="#{usuarioMB.logado}">
+        <p:menuitem value="Alterar dados" actionListener="#{logadoView.save()}" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Pedidos" actionListener="#{logadoView.update()}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        <p:menuitem value="Sair" action="#{logadoView.logOff()}" ajax="false" icon="ui-icon-close"/>
+        <p:separator />
+        <p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink"/>
+    </p:menuButton>
+</h:form>
 	</h:form>
 	<!--  
 		<h:form>
