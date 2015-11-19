@@ -145,7 +145,17 @@ as
             ON sub.idsubcat 
             =  cat.idcat
 ----------------------------            
-select Sub_Categoria from v_categoria where Categoria like 'informatica'
+select Sub_Categoria from v_categoria where sub_categoria like 'nootbook'
 
+-------------------------------
+alter VIEW v_prodcat
+as
+select prod.nome as Nome, cat.nome as Categoria, cat.idcat from produto prod
+inner join categoria cat
+on prod.categoria = cat.idcat
 
+where idcat = 5
+-----------------------------
+select * from v_prodcat where idcat = 5
 
+select * from produto

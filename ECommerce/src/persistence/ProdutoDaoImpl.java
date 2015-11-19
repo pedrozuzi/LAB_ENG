@@ -96,6 +96,31 @@ public class ProdutoDaoImpl implements ProdutoDao {
 			p.setMarca(rs.getString("marca"));
 			p.setImagem(rs.getString("imagem"));
 
+			lista.add(p);
+		}
+		ps.close();
+
+		return lista;
+	}
+
+	@Override
+	public List<Produto> pesquisaProdutoCategoria(int cat) throws SQLException {
+		List<Produto> lista = new ArrayList<Produto>();
+		String query = "select * from v_prodcat where idcat = ?";
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setInt(1, cat);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Produto p = new Produto();
+
+			p.setIdProduto(rs.getInt("id"));
+			p.setNome(rs.getString("nome"));
+			p.setValor(rs.getDouble("valor"));
+			p.setDescicao(rs.getString("descricao"));
+			p.setCategoria(rs.getInt("categoria"));
+			p.setMarca(rs.getString("marca"));
+			p.setImagem(rs.getString("imagem"));
 
 			lista.add(p);
 		}
