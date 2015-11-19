@@ -2,12 +2,10 @@ package managedBean;
 
 import java.io.Serializable;
 import java.sql.SQLException;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
 import persistence.UsuarioDao;
 import persistence.UsuarioDaoImpl;
 import model.Usuario;
