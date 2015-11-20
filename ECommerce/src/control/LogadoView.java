@@ -3,20 +3,21 @@ package control;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 @ManagedBean
 public class LogadoView {
 
-	public void save() {
-		addMessage("Success", "Data saved");
+	public void save(ActionEvent e) {
+		addMessage("Success", "Alterar");
 	}
 
-	public void update() {
-		addMessage("Success", "Data updated");
+	public void update(ActionEvent e) {
+		addMessage("Success", "Pedidos");
 	}
-
-	public void delete() {
-		addMessage("Success", "Data deleted");
+	
+	public void logOff() {
+		
 	}
 
 	public void addMessage(String summary, String detail) {
