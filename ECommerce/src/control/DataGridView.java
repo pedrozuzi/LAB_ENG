@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import managedBean.ProdutoMB;
@@ -13,7 +14,8 @@ import model.Produto;
 
  
 @ManagedBean
-@ViewScoped
+@SessionScoped
+//@ViewScoped
 public class DataGridView implements Serializable {
 	private static final long serialVersionUID = 7659498095569980364L;
 	
