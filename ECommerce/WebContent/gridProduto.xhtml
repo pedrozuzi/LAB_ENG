@@ -26,10 +26,10 @@
 				<h:panelGrid columns="1" style="width:100%">
 					<p:graphicImage value="/imagens/#{produto.imagem}"
 						style="width:200px" height="150px" />
-					<!-- <p:graphicImage name="/imagens/#{produto.imagem}" />  -->
 					<h:outputText value="Nome: #{produto.nome}" />
 					<h:outputText value="R$: #{produto.valor}" />
 
+					<!-- Botão Details -->
 					<p:commandLink update=":form:produtoDetail"
 						oncomplete="PF('produtoDialog').show()" title="View Detail">
 						<h:outputText styleClass="ui-icon ui-icon-search"
@@ -37,6 +37,17 @@
 						<f:setPropertyActionListener value="#{produto}"
 							target="#{dataGridView.selectedProduto}" />
 					</p:commandLink>
+					<!-- Botão Carrinho -->
+					<p:growl id="growl" life="2000" />
+					<p:commandButton value="Adicionar ao Carrinho"
+						style="font-size:70%" id="withIcon"
+						actionListener="#{carrinhoMB.adiciona(selectedProduto)}" update="growl"
+						icon="ui-icon-plusthick">
+					</p:commandButton>
+
+
+
+
 				</h:panelGrid>
 			</p:panel>
 
@@ -66,6 +77,14 @@
 
 					<h:outputText value="Preço" />
 					<h:outputText value="$#{dataGridView.selectedProduto.valor}" />
+
+					<p:growl id="growl" life="2000" />
+					<p:commandButton value="Adicionar ao Carrinho"
+						style="font-size:70%" id="withIcon"
+						actionListener="#{carrinhoMB.adiciona(selectedProduto)}" update="growl"
+						icon="ui-icon-plusthick">
+					</p:commandButton>
+					
 				</p:panelGrid>
 			</p:outputPanel>
 		</p:dialog>
