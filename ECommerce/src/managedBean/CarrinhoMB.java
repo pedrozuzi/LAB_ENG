@@ -41,6 +41,7 @@ public class CarrinhoMB {
 	}
 	
 	public void excluir(Produto p) {
+		System.out.println(p.getNome());
 		this.itensCarrinho.remove(p);
 	}
 	

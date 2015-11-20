@@ -18,7 +18,8 @@
 		<div id="cabecalho">cabecalho</div>
 		<div id="menu"> <ui:include src="/cabecalho.xhtml" />  </div>
 		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
-		<div id="conteudo"> 
+		<div id="conteudo">
+		<h:form>
 			<h:outputLabel rendered="#{carrinhoMB.itensCarrinho.size() == 0}">
 				<h2> Você não possui produtos no Carrinho </h2>
 			</h:outputLabel>	
@@ -42,12 +43,11 @@
 						<f:facet name="header">Ações</f:facet>
 					</h:column>
 				</h:dataTable>
-				
-				
 			</h:panelGrid>
+		</h:form>
 			<h:commandButton action="#{carrinhoMB.finalizarCompra()}" 
 							value="Finalizar Compra" rendered="#{carrinhoMB.itensCarrinho.size() > 0}"/>
-			
+		 	
 		</div>
 		<div id="rodape">rodape</div>
 
