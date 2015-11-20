@@ -48,6 +48,16 @@ primary key (id)
 
 )
 
+
+create table categoria(
+idcat int not null,
+idsubcat int,
+nome varchar(30) not null,
+
+primary key (idcat),
+foreign key (idsubcat) references categoria (idcat)
+)
+
 create table produto(
 
 id int not null,
@@ -73,14 +83,7 @@ foreign key (idPedido) references pedido(id)
 
 )
 
-create table categoria(
-idcat int not null,
-idsubcat int,
-nome varchar(30) not null,
 
-primary key (idcat),
-foreign key (idsubcat) references categoria (idcat)
-)
 
 ---------------------------------
 insert into categoria values 
@@ -148,12 +151,12 @@ as
 select Sub_Categoria from v_categoria where sub_categoria like 'nootbook'
 
 -------------------------------
-alter VIEW v_prodcat
+create VIEW v_prodcat
 as
 select prod.nome as Nome, cat.nome as Categoria, cat.idcat from produto prod
 inner join categoria cat
 on prod.categoria = cat.idcat
-
+----
 where idcat = 5
 -----------------------------
 select * from v_prodcat where idcat = 5
