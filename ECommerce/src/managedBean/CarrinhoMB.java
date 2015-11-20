@@ -8,41 +8,43 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import persistence.ProdutoDao;
 import persistence.ProdutoDaoImpl;
-import model.ItemPedido;
+import model.Produto;
 
 @ManagedBean
 @SessionScoped
-public class ItemPedidoMB {
+public class CarrinhoMB {
 	
-	private List<ItemPedido> itensCarrinho;
+	private List<Produto> itensCarrinho;
 	private ProdutoDao pDao;
 	
-	public ItemPedidoMB() {
-		setItensCarrinho(new ArrayList<ItemPedido>());
+	public CarrinhoMB() {
+		itensCarrinho = new ArrayList<Produto>();
 		pDao = new ProdutoDaoImpl();
 	}
 	
-	public List<ItemPedido> getItensCarrinho() {
+	public List<Produto> getItensCarrinho() {
 		return itensCarrinho;
 	}
 
-	public void setItensCarrinho(List<ItemPedido> itensCarrinho) {
+	public void setItensCarrinho(List<Produto> itensCarrinho) {
 		this.itensCarrinho = itensCarrinho;
 	}
 	
-	public String adiciona() {
+	public void adiciona(Produto p) {
 		FacesContext fc = FacesContext.getCurrentInstance();
 		fc.addMessage(null, new FacesMessage("Seu carrinho tem :  " + itensCarrinho.size() + " produtos" ));
-		return "";
 	}
 	
-	public String finalizarCompra() {
+	public void finalizarCompra() {
 		double total;
-		total = itensCarrinho.stream().mapToDouble(i -> i.getValorUnitario()).sum();
+		total = itensCarrinho.stream().mapToDouble(i -> i.getValor()).sum();
 		FacesContext fc = FacesContext.getCurrentInstance();
 		fc.addMessage(null, new FacesMessage("Compra Finalizada. Total : " + total));
-		itensCarrinho = new  ArrayList<ItemPedido>();
-		return"";
+		itensCarrinho = new  ArrayList<Produto>();
+	}
+	
+	public void excluir(Produto p) {
+		//TODO
 	}
 	
 }

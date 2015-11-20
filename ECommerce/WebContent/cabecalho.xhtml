@@ -23,7 +23,7 @@
     <p:menuButton value="#{usuarioMB.usuario.email}" rendered="#{usuarioMB.logado}">
         <p:menuitem value="Alterar dados" actionListener="#{logadoView.save}" update="messages" icon="ui-icon-disk"/>
         <p:menuitem value="Pedidos" actionListener="#{logadoView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
-        <p:menuitem value="Sair" actionListener="#{usuarioMB.logOff}" update="messages" icon="ui-icon-close"/>
+        <p:menuitem value="Sair" action="#{usuarioMB.logOff()}" update="messages" icon="ui-icon-close"/>
         <p:separator />
         <p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink"/>
     </p:menuButton>
