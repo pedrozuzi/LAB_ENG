@@ -13,6 +13,8 @@ public interface ProdutoDao {
 	
 	List<Produto> pesquisaProduto(Produto prod) throws SQLException;
 	
+	List<Produto> pesquisaProduto(String nome) throws SQLException;
+	
 	List<Produto> pesquisaProdutoCategoria(int cat) throws SQLException;
 	
 	void alteraProduto(Produto prod) throws SQLException;

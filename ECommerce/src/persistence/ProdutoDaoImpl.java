@@ -102,6 +102,31 @@ public class ProdutoDaoImpl implements ProdutoDao {
 
 		return lista;
 	}
+	
+	public List<Produto> pesquisaProduto(String nome) throws SQLException {
+		List<Produto> lista = new ArrayList<Produto>();
+		String query = "select * from produto where nome like %?%"; // where id = ?
+		PreparedStatement ps = c.prepareStatement(query);
+		ps.setString(1, nome);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Produto p = new Produto();
+
+			p.setIdProduto(rs.getInt("id"));
+			p.setNome(rs.getString("nome"));
+			p.setValor(rs.getDouble("valor"));
+			p.setDescricao(rs.getString("descricao"));
+			p.setCategoria(rs.getInt("categoria"));
+			p.setMarca(rs.getString("marca"));
+			p.setImagem(rs.getString("imagem"));
+
+			lista.add(p);
+		}
+		ps.close();
+
+		return lista;
+	}
 
 	@Override
 	public List<Produto> pesquisaProdutoCategoria(int cat) throws SQLException {

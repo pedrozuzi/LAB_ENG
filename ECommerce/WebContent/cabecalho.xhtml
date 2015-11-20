@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Loja Virtual</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Loja Virtual</title>
 </h:head>
 <h:body>
 
 
 
 	<div class="header">
-	<!--  <h1>Loja</h1>-->
-	
-	<img width="15%" height="40%" src="imagens/logo2.png" alt="" title=""/>
-	<h:panelGrid columns="4">
-	<input style=" width : 450px; height : 29px;"/>   
-	<h:button name="buscar" value="Buscar" class="but" style="width : 129px; height : 35px;" />
-	<h:form>
-	<p:commandLink id="lc" action="login.xhtml" value="Entre ou Cadastre-se" class="login" rendered="#{usuarioMB.naoLogado()}"/>
-    <p:growl id="messages" showDetail="true"/>
- 
-    <p:menuButton value="#{usuarioMB.usuario.email}" rendered="#{usuarioMB.logado}">
-        <p:menuitem value="Alterar dados" actionListener="#{logadoView.save}" update="messages" icon="ui-icon-disk"/>
-        <p:menuitem value="Pedidos" actionListener="#{logadoView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
-        <p:menuitem value="Sair" action="#{usuarioMB.logOff()}" update="messages" icon="ui-icon-close"/>
-        <p:separator />
-        <p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink"/>
-    </p:menuButton>
-    
-    <h:commandLink action="carrinho.xhtml" value="        Carrinho" class="login"/>
-</h:form>
-	<!--  
+		<!--  <h1>Loja</h1>-->
+
+		<img width="15%" height="40%" src="imagens/logo2.png" alt="" title="" />
+		
+		<h:panelGrid columns="4">
+			<h:inputText id="nome" value="#{dataGridView.selectedProduto.nome}" style="width: 450px; height: 29px;" />
+			<p:commandButton value="Busca" style="width : 129px; height : 35px;"
+				id="busca" actionListener="#{dataGridView.prodmb.pesquisar(dataGridView.selectedProduto.nome)}"
+				 icon="ui-icon-search"/>
+				
+			<h:form>
+				<p:commandLink id="lc" action="login.xhtml"
+					value="Entre ou Cadastre-se" class="login"
+					rendered="#{usuarioMB.naoLogado()}" />
+				<p:growl id="messages" showDetail="true" />
+
+				<p:menuButton value="#{usuarioMB.usuario.email}"
+					rendered="#{usuarioMB.logado}">
+					<p:menuitem value="Alterar dados"
+						actionListener="#{logadoView.save}" update="messages"
+						icon="ui-icon-disk" />
+					<p:menuitem value="Pedidos" actionListener="#{logadoView.update}"
+						update="messages" icon="ui-icon-arrowrefresh-1-w" />
+					<p:menuitem value="Sair" action="#{usuarioMB.logOff()}"
+						update="messages" icon="ui-icon-close" />
+					<p:separator />
+					<p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink" />
+				</p:menuButton>
+
+				<h:commandLink action="carrinho.xhtml" value="        Carrinho"
+					class="login" />
+			</h:form>
+			<!--  
 		<h:form>
 	<p:growl id="mensagem" showDetail="true"></p:growl>
 	<p:commandButton value="E" actionListener="#{dialogView.destroyWorld}" update="message">
@@ -47,42 +59,38 @@
     </p:confirmDialog>
 	</h:form>
 -->
-	</h:panelGrid>
-</div>
+		</h:panelGrid>
+	</div>
 
-<div class="menu-container">
-	<ul class="menu clearfix">
-		<li><a href="index.xhtml">Home</a></li>
-		
-		<li><a>Eletrodomestico</a>
-			<ul class="sub-menu">
-				<li><a href="#"> Geladeira </a></li>
-				<li><a href="#"> Fogão </a></li>
-			</ul>
-		</li>
-		
-		<li><a href="#">Informatica</a>
-			<ul class="sub-menu">
-				<li><a href="#"> NoteBook </a></li>
-				<li><a href="#"> Desktop </a></li>
-			</ul>
-		</li>
-		
-		<li><a href="#">Esporte</a>
-			<ul class="sub-menu">
-				<li><a href="#"> Futebol </a></li>
-				<li><a href="#"> Bicicleta </a></li>
-			</ul>
-		</li>
-		
-		<li><a href="#">Eletronico</a>
-			<ul class="sub-menu">
-				<li><a href="#"> TV LED </a></li>
-				<li><a href="#"> Smart TV </a></li>
-			</ul>
-		</li>
-		
-	</ul>
-</div>
+	<div class="menu-container">
+		<ul class="menu clearfix">
+			<li><a href="index.xhtml">Home</a></li>
+
+			<li><a>Eletrodomestico</a>
+				<ul class="sub-menu">
+					<li><a href="#"> Geladeira </a></li>
+					<li><a href="#"> Fogão </a></li>
+				</ul></li>
+
+			<li><a href="#">Informatica</a>
+				<ul class="sub-menu">
+					<li><a href="#"> NoteBook </a></li>
+					<li><a href="#"> Desktop </a></li>
+				</ul></li>
+
+			<li><a href="#">Esporte</a>
+				<ul class="sub-menu">
+					<li><a href="#"> Futebol </a></li>
+					<li><a href="#"> Bicicleta </a></li>
+				</ul></li>
+
+			<li><a href="#">Eletronico</a>
+				<ul class="sub-menu">
+					<li><a href="#"> TV LED </a></li>
+					<li><a href="#"> Smart TV </a></li>
+				</ul></li>
+
+		</ul>
+	</div>
 </h:body>
 </html>

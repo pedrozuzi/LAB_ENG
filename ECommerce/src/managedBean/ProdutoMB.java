@@ -17,8 +17,8 @@ import persistence.ProdutoDaoImpl;
 
 @ManagedBean(name = "produtoMB")
 @ApplicationScoped
-public class ProdutoMB {
-	//private static final long serialVersionUID = 4196223195266927420L;
+public class ProdutoMB implements Serializable {
+	private static final long serialVersionUID = 4196223195266927420L;
 	private List<Produto> listaPesquisa = new ArrayList<Produto>();
 
 	private Produto produtoAtual;
@@ -41,18 +41,34 @@ public class ProdutoMB {
 		return lista;
 	}
 
+	/**
+	 * retorna todos os produtos
+	 * @return
+	 */
 	public List<Produto> pesquisar() {
-		// String msg = "Erro ao pesquisar Produto";
 		try {
 			listaPesquisa = produtoDao.pesquisaProduto(produtoAtual);
-			// msg = "Foram encontrados " + listaPesquisa.size() + " Produtos";
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// FacesContext fc = FacesContext.getCurrentInstance();
-		// fc.addMessage( "", new FacesMessage( msg ) );
 		return listaPesquisa;
 	}
+	
+	/**
+	 * retorna os produtos encontrados a partir da busca por nome
+	 * @param nome
+	 * @return
+	 */
+	public List<Produto> pesquisar(String nome) {
+		try {
+			listaPesquisa = produtoDao.pesquisaProduto(nome);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listaPesquisa;
+	}
+	
 
 	void caregaProdutoUnico(int id) {
 
