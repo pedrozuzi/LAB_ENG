@@ -28,8 +28,32 @@ public class DataGridView implements Serializable {
     public void init() throws SQLException {
         produtos = prodmb.pesquisar();
     }
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
+	public Produto getSelectedProduto() {
+		return selectedProduto;
+	}
+
+	public void setSelectedProduto(Produto selectedProduto) {
+		this.selectedProduto = selectedProduto;
+	}
+
+	public ProdutoMB getProdmb() {
+		return prodmb;
+	}
+
+	public void setProdmb(ProdutoMB prodmb) {
+		this.prodmb = prodmb;
+	}
  
-    public List<Produto> getProdutos() {
+   /**public List<Produto> getProdutos() {
         return produtos;
     }
  
@@ -43,5 +67,7 @@ public class DataGridView implements Serializable {
  
     public void setSelectedProduto(Produto selectedProduto) {
         this.selectedProduto = selectedProduto;
-    }
+    }*/
+    
+    
 }

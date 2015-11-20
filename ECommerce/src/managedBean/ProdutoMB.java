@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -15,13 +16,14 @@ import persistence.ProdutoDao;
 import persistence.ProdutoDaoImpl;
 
 @ManagedBean(name = "produtoMB")
-@SessionScoped
-public class ProdutoMB implements Serializable {
-	private static final long serialVersionUID = 4196223195266927420L;
+@ApplicationScoped
+public class ProdutoMB {
+	//private static final long serialVersionUID = 4196223195266927420L;
 	private List<Produto> listaPesquisa = new ArrayList<Produto>();
 
 	private Produto produtoAtual;
 	private ProdutoDao produtoDao;
+	
 
 	public ProdutoMB() {
 		produtoAtual = new Produto();
@@ -63,5 +65,33 @@ public class ProdutoMB implements Serializable {
 	void icluiProduto() {
 
 	}
+
+	public List<Produto> getListaPesquisa() {
+		return listaPesquisa;
+	}
+
+	public void setListaPesquisa(List<Produto> listaPesquisa) {
+		this.listaPesquisa = listaPesquisa;
+	}
+
+	public Produto getProdutoAtual() {
+		return produtoAtual;
+	}
+
+	public void setProdutoAtual(Produto produtoAtual) {
+		this.produtoAtual = produtoAtual;
+	}
+
+	public ProdutoDao getProdutoDao() {
+		return produtoDao;
+	}
+
+	public void setProdutoDao(ProdutoDao produtoDao) {
+		this.produtoDao = produtoDao;
+	}
+	
+	
+	
+	
 
 }
