@@ -4,25 +4,27 @@
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:p="http://primefaces.org/ui">
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Loja Virtual</title>
-
-<link rel="stylesheet" type="text/css" href="css\principal.css" />
-
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Loja Virtual</title>
+	<link rel="stylesheet" type="text/css" href="css\principal.css" />
+	<link rel="stylesheet" type="text/css" href="css\design.css" />
 </h:head>
+
+
 <h:body>
 
-<div id="cabecalho">
-	<ui:include src="/cabecalho.xhtml" />
-</div>
+	<div id="principal">
 
-<br></br>
-<!--  
-<div id="produtos">
-	<ui:include src="/produtos.xhtml" />
-</div>-->
+		<div id="cabecalho">cabecalho</div>
+		<div id="menu"> <ui:include src="/cabecalho.xhtml" />  </div>
+		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
+		<div id="conteudo"> <ui:include src="/gridProduto.xhtml" /> </div>
+		<div id="rodape">rodape</div>
+
+	</div>
 
 </h:body>
 </html>
