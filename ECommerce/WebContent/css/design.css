@@ -19,7 +19,7 @@ body {
 #menu {
 	border: 1px solid black;
 	width: auto;
-	height: 215px;
+	height: auto;
 	margin-bottom: 2px;
 }
 
@@ -48,6 +48,6 @@ body {
 #rodape {
 	border: 1px solid black;
 	width: auto;
-	height: 20px;
+	height: 80px;
 	clear: both;
 }
