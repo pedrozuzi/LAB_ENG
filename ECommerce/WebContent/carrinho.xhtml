@@ -45,6 +45,8 @@
 				
 				
 			</h:panelGrid>
+			<h:commandButton action="#{carrinhoMB.finalizarCompra()}" 
+							value="Finalizar Compra" rendered="#{carrinhoMB.itensCarrinho.size() > 0}"/>
 			
 		</div>
 		<div id="rodape">rodape</div>
