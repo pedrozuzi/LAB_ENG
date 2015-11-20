@@ -15,15 +15,17 @@
 <h:body>
 	<h:form id="form">
 		<p:dataGrid var="produto" value="#{dataGridView.produtos}" columns="3"
-			layout="grid" rows="12" paginator="true" id="produtos"
+			layout="tabular" rows="12" paginator="true" id="produtos"
 			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="6,12,16">
 			<f:facet name="header">
             Produtos for sale
-        </f:facet>
+            </f:facet>
+
 			<p:panel header="#{produto.idProduto}" style="text-align:center">
 				<h:panelGrid columns="1" style="width:100%">
-					<p:graphicImage value="/imagens/#{produto.imagem}" style="width:200px"  height="150px" />
+					<p:graphicImage value="/imagens/#{produto.imagem}"
+						style="width:200px" height="150px" />
 					<!-- <p:graphicImage name="/imagens/#{produto.imagem}" />  -->
 					<h:outputText value="Nome: #{produto.nome}" />
 					<h:outputText value="R$: #{produto.valor}" />
@@ -47,8 +49,10 @@
 					rendered="#{not empty dataGridView.selectedProduto}"
 					columnClasses="label,value">
 					<f:facet name="header">
-						<p:graphicImage value="/imagens/#{dataGridView.selectedProduto.imagem}" style="width:200px"  height="150px" />
-						
+						<p:graphicImage
+							value="/imagens/#{dataGridView.selectedProduto.imagem}"
+							style="width:200px" height="150px" />
+
 					</f:facet>
 
 					<h:outputText value="Id:" />

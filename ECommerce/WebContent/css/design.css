@@ -35,12 +35,14 @@ body {
 
 #conteudo {
 	border: 1px solid black;
+	
 	width: auto;
 	height: auto;
-	margin-top: 1px;
+	
 	margin-left: 164px;
 	margin-right: 0px;
 	margin-bottom: 2px;
+	
 }
 
 #rodape {

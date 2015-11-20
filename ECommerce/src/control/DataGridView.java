@@ -14,8 +14,8 @@ import model.Produto;
 
  
 @ManagedBean
-@SessionScoped
-//@ViewScoped
+//@SessionScoped
+@ViewScoped
 public class DataGridView implements Serializable {
 	private static final long serialVersionUID = 7659498095569980364L;
 	
