@@ -24,19 +24,15 @@ public class DataGridView implements Serializable {
     private ProdutoMB prodmb;
      
     @PostConstruct
-    public void init() {
-        try {
-			produtos = prodmb.carregaProdrutoCategoria(5);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    public void init() throws SQLException {
+        produtos = prodmb.pesquisar();
     }
  
     public List<Produto> getProduto() {
         return produtos;
     }
  
-    public void setService(ProdutoMB prodmb) {
+    public void setProdutoMB(ProdutoMB prodmb) {
         this.prodmb = prodmb;
     }
  

@@ -3,7 +3,7 @@ package model;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name = "produto")
+@ManagedBean(name = "prod")
 @ApplicationScoped
 public class Produto {
 	

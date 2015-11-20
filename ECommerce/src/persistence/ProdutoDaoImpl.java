@@ -80,9 +80,9 @@ public class ProdutoDaoImpl implements ProdutoDao {
 	@Override
 	public List<Produto> pesquisaProduto(Produto prod) throws SQLException {
 		List<Produto> lista = new ArrayList<Produto>();
-		String query = "select * from produto where id = ?";
+		String query = "select * from produto"; // where id = ?
 		PreparedStatement ps = c.prepareStatement(query);
-		ps.setInt(1, prod.getIdProduto());
+		//ps.setInt(1, prod.getIdProduto());
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
