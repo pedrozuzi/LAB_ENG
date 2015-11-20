@@ -41,7 +41,7 @@
 					<p:growl id="growl" life="2000" />
 					<p:commandButton value="Adicionar ao Carrinho"
 						style="font-size:70%" id="withIcon"
-						actionListener="#{carrinhoMB.adiciona(selectedProduto)}" update="growl"
+						actionListener="#{carrinhoMB.adiciona(dataGridView.selectedProduto)}" update="growl"
 						icon="ui-icon-plusthick">
 					</p:commandButton>
 
@@ -81,7 +81,7 @@
 					<p:growl id="growl" life="2000" />
 					<p:commandButton value="Adicionar ao Carrinho"
 						style="font-size:70%" id="withIcon"
-						actionListener="#{carrinhoMB.adiciona(selectedProduto)}" update="growl"
+						actionListener="#{carrinhoMB.adiciona(dataGridView.selectedProduto)}" update="growl"
 						icon="ui-icon-plusthick">
 					</p:commandButton>
 					
