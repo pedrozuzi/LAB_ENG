@@ -15,12 +15,13 @@ import model.Produto;
 @ManagedBean
 @ViewScoped
 public class DataGridView implements Serializable {
-     
-    private List<Produto> produtos;
+	private static final long serialVersionUID = 7659498095569980364L;
+	
+	private List<Produto> produtos;
      
     private Produto selectedProduto;
      
-    @ManagedProperty("#{produtos}")
+    @ManagedProperty("#{produtoMB}")
     private ProdutoMB prodmb;
      
     @PostConstruct
@@ -28,7 +29,7 @@ public class DataGridView implements Serializable {
         produtos = prodmb.pesquisar();
     }
  
-    public List<Produto> getProduto() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
  

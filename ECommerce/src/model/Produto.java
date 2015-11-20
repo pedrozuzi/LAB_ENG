@@ -9,7 +9,7 @@ public class Produto {
 	
 	private int idProduto;
 	private String nome;
-	private String descicao;
+	private String descricao;
 	private double valor;
 	private int categoria;
 	private String marca;
@@ -48,11 +48,11 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDescicao() {
-		return descicao;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescicao(String descicao) {
-		this.descicao = descicao;
+	public void setDescricao(String descicao) {
+		this.descricao = descicao;
 	}
 	public double getValor() {
 		return valor;

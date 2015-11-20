@@ -34,7 +34,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 
 		ps.setString(1, prod.getNome());
 		ps.setDouble(2, prod.getValor());
-		ps.setString(3, prod.getDescicao());
+		ps.setString(3, prod.getDescricao());
 		ps.setInt(4, prod.getCategoria());
 		ps.setString(5, prod.getMarca());
 		ps.setString(6, prod.getImagem());
@@ -53,7 +53,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 
 		ps.setString(1, prod.getNome());
 		ps.setDouble(2, prod.getValor());
-		ps.setString(3, prod.getDescicao());
+		ps.setString(3, prod.getDescricao());
 		ps.setInt(4, prod.getCategoria());
 		ps.setString(5, prod.getMarca());
 		ps.setString(6, prod.getImagem());
@@ -91,7 +91,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 			p.setIdProduto(rs.getInt("id"));
 			p.setNome(rs.getString("nome"));
 			p.setValor(rs.getDouble("valor"));
-			p.setDescicao(rs.getString("descricao"));
+			p.setDescricao(rs.getString("descricao"));
 			p.setCategoria(rs.getInt("categoria"));
 			p.setMarca(rs.getString("marca"));
 			p.setImagem(rs.getString("imagem"));
@@ -117,7 +117,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 			p.setIdProduto(rs.getInt("id"));
 			p.setNome(rs.getString("nome"));
 			p.setValor(rs.getDouble("valor"));
-			p.setDescicao(rs.getString("descricao"));
+			p.setDescricao(rs.getString("descricao"));
 			p.setCategoria(rs.getInt("categoria"));
 			p.setMarca(rs.getString("marca"));
 			p.setImagem(rs.getString("imagem"));
