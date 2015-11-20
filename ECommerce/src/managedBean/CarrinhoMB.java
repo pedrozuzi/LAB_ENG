@@ -6,8 +6,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import persistence.ProdutoDao;
-import persistence.ProdutoDaoImpl;
 import model.Produto;
 
 @ManagedBean
@@ -15,11 +13,9 @@ import model.Produto;
 public class CarrinhoMB {
 	
 	private List<Produto> itensCarrinho;
-	private ProdutoDao pDao;
 	
 	public CarrinhoMB() {
 		itensCarrinho = new ArrayList<Produto>();
-		pDao = new ProdutoDaoImpl();
 	}
 	
 	public List<Produto> getItensCarrinho() {
@@ -31,6 +27,7 @@ public class CarrinhoMB {
 	}
 	
 	public void adiciona(Produto p) {
+		this.itensCarrinho.add(p);
 		FacesContext fc = FacesContext.getCurrentInstance();
 		fc.addMessage(null, new FacesMessage("Seu carrinho tem :  " + itensCarrinho.size() + " produtos" ));
 	}
@@ -44,7 +41,7 @@ public class CarrinhoMB {
 	}
 	
 	public void excluir(Produto p) {
-		//TODO
+		this.itensCarrinho.remove(p);
 	}
 	
 }
