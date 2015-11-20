@@ -25,7 +25,7 @@ public class DataGridView implements Serializable {
     private ProdutoMB prodmb;
      
     @PostConstruct
-    public void init() throws SQLException {
+    public void init() {
         produtos = prodmb.pesquisar();
     }
 
