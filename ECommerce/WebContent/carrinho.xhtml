@@ -9,12 +9,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Loja - Carrinho</title>
 	<link rel="stylesheet" type="text/css" href="css\principal.css" />
+	<link rel="stylesheet" type="text/css" href="css\design.css" />
 </h:head>
 <h:body>
 
-<div id="cabecalho">
-	<ui:include src="/cabecalho.xhtml" />
-</div>
+		<div id="principal">
+
+		<div id="cabecalho">cabecalho</div>
+		<div id="menu"> <ui:include src="/cabecalho.xhtml" />  </div>
+		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
+		<div id="conteudo"> 
+			<h:outputLabel rendered="#{carrinhoMB.itensCarrinho.size() == 0}">
+				<h2> Você não possui produtos no Carrinho </h2>
+			</h:outputLabel>	
+			<h:panelGrid rendered="#{carrinhoMB.itensCarrinho.size() > 0}">
+				<h2>Itens do Carrinho</h2>
+				<h:dataTable value="#{carrinhoMB.itensCarrinho}" var="carrinho" border="1">
+					<h:column>#{carrinho.idProduto}
+						<f:facet name="header">Id</f:facet>
+					</h:column>
+					<h:column>#{carrinho.marca}
+						<f:facet name="header">Marca</f:facet>
+					</h:column>
+					<h:column>#{carrinho.nome}
+						<f:facet name="header">Produto</f:facet>
+					</h:column>
+					<h:column>#{carrinho.valor}
+						<f:facet name="header">Preço</f:facet>
+					</h:column>
+					<h:column>
+						<h:commandLink action="#{carrinhoMB.excluir( carrinho )}">remover</h:commandLink>
+						<f:facet name="header">Ações</f:facet>
+					</h:column>
+				</h:dataTable>
+				
+				
+			</h:panelGrid>
+			<h:commandButton action="#{carrinhoMB.finalizarCompra()}" 
+							value="Finalizar Compra" rendered="#{carrinhoMB.itensCarrinho.size() > 0}"/>
+			
+		</div>
+		<div id="rodape">rodape</div>
+
+	</div>
 
 </h:body>
 </html>
