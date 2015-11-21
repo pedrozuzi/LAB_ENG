@@ -1,65 +1,101 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-	  
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 
-<title>Loja Virtual</title>
+	<title>Loja Virtual</title>
 
-<link rel="stylesheet" type="text/css" href="css\principal.css" />
-<link rel="stylesheet" type="text/css" href="css\login.css" />
+	<link rel="stylesheet" type="text/css" href="css\principal.css" />
+	<link rel="stylesheet" type="text/css" href="css\login.css" />
+	<link rel="stylesheet" type="text/css" href="css\design.css" />
 </h:head>
 
 <h:body>
 
-<div id="cabecalho">
-	<ui:include src="/cabecalho.xhtml" />
-</div>
+	<h:messages />
 
-<h:messages/>
+	<div id="principal">
 
-<div id="container">
-	<div id="logar" class="formulario">
-		<h:form>
-			<h:outputLabel> <h1> Login </h1> </h:outputLabel>
-			<h:panelGrid columns="3" style=" width : 262px;">
-				<h:outputLabel> <h3> Email :  </h3> </h:outputLabel>
-				<h:inputText id="lemail" value="#{usuarioMB.usuario.email}">  </h:inputText>
-				<h:message for="lemail"/>
-				
-				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret id="lsenha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
-				<h:message for="lsenha"/>
-				
-				<h:commandButton action="#{usuarioMB.realizarLogin()}"  value="Entrar" class="but">
-					<f:setPropertyActionListener value="#{clienteMB.clienteAtual}" target="#{clienteMB.clienteAtual}" />
-				</h:commandButton>	
-			</h:panelGrid>
-		</h:form>
+		<div id="cabecalho">cabecalho</div>
+		<div id="menu">
+			<ui:include src="/cabecalho.xhtml" />
+		</div>
+		<div id="coluna_esquerda">
+			<ui:include src="/menuLateral.xhtml" />
+		</div>
+		<div id="conteudo">
+			<h:messages />
+			<div id="container">
+				<div id="logar" class="formulario">
+					<h:form>
+						<h:outputLabel>
+							<h1>Login</h1>
+						</h:outputLabel>
+						<h:panelGrid columns="3" style=" width : 262px;">
+							<h:outputLabel>
+								<h3>Email :</h3>
+							</h:outputLabel>
+							<h:inputText id="lemail" value="#{usuarioMB.usuario.email}">
+							</h:inputText>
+							<h:message for="lemail" />
+
+							<h:outputLabel>
+								<h3>Senha :</h3>
+							</h:outputLabel>
+							<h:inputSecret id="lsenha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
+							<h:message for="lsenha" />
+
+							<h:commandButton action="#{usuarioMB.realizarLogin()}"
+								value="Entrar" class="but">
+								<f:setPropertyActionListener value="#{clienteMB.clienteAtual}"
+									target="#{clienteMB.clienteAtual}" />
+							</h:commandButton>
+						</h:panelGrid>
+					</h:form>
+				</div>
+				<div id="cadastro" class="formulario">
+					<h:form>
+						<h:outputLabel>
+							<h1>Cadastro</h1>
+						</h:outputLabel>
+						<h:panelGrid columns="2" style=" width : 262px;">
+							<h:outputLabel>
+								<h3>Email :</h3>
+							</h:outputLabel>
+							<h:inputText id="email" value="#{usuarioMB.usuario.email}">
+							</h:inputText>
+
+							<h:outputLabel>
+								<h3>Senha :</h3>
+							</h:outputLabel>
+							<h:inputSecret id="senha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
+
+							<h:outputLabel>
+								<h3>Confirme a Senha :</h3>
+							</h:outputLabel>
+							<h:inputSecret id="cSenha">
+							</h:inputSecret>
+
+							<h:commandButton action="cadastro.xhtml" value="Cadastrar"
+								class="but">
+								<f:setPropertyActionListener value="#{usuarioMB.usuario}"
+									target="#{usuarioMB.usuario}" />
+							</h:commandButton>
+						</h:panelGrid>
+					</h:form>
+				</div>
+			</div>
+		</div><!-- CONTEUDO -->
+		<div id="rodape">
+			<img width="890px" height="80px" src="imagens/formpag.png" alt=""
+				title="" />
+		</div>
+
 	</div>
-	<div id ="cadastro" class="formulario">
-		<h:form>
-			<h:outputLabel> <h1> Cadastro </h1> </h:outputLabel>
-			<h:panelGrid columns="2" style=" width : 262px;">
-				<h:outputLabel> <h3> Email :  </h3> </h:outputLabel>
-				<h:inputText id="email" value="#{usuarioMB.usuario.email}">  </h:inputText>
-				
-				<h:outputLabel> <h3> Senha : </h3> </h:outputLabel>
-				<h:inputSecret id="senha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
-				
-				<h:outputLabel> <h3> Confirme a Senha :  </h3> </h:outputLabel>
-				<h:inputSecret id="cSenha"> </h:inputSecret>
-
-				<h:commandButton action="cadastro.xhtml" value="Cadastrar" class="but"> 
-					<f:setPropertyActionListener value="#{usuarioMB.usuario}" target="#{usuarioMB.usuario}" />
-				</h:commandButton>
-			</h:panelGrid>
-		</h:form>
-	</div>
-</div>
 </h:body>
 </html>
