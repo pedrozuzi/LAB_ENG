@@ -12,24 +12,25 @@ import javax.faces.bean.ViewScoped;
 import managedBean.ProdutoMB;
 import model.Produto;
 
- 
 @ManagedBean
 @SessionScoped
-//@ViewScoped
+// @ViewScoped
 public class DataGridView implements Serializable {
 	private static final long serialVersionUID = 7659498095569980364L;
-	
+
 	private List<Produto> produtos;
-     
-    private Produto selectedProduto;
-     
-    @ManagedProperty("#{produtoMB}")
-    private ProdutoMB prodmb;
-     
-    @PostConstruct
-    public void init() {
-        produtos = prodmb.pesquisar();
-    }
+
+	private Produto selectedProduto;
+
+	@ManagedProperty("#{produtoMB}")
+	private ProdutoMB prodmb;
+
+	@PostConstruct
+	public void init() {
+		
+			produtos = prodmb.pesquisar();
+		
+	}
 
 	public List<Produto> getProdutos() {
 		return produtos;
@@ -54,22 +55,16 @@ public class DataGridView implements Serializable {
 	public void setProdmb(ProdutoMB prodmb) {
 		this.prodmb = prodmb;
 	}
- 
-   /**public List<Produto> getProdutos() {
-        return produtos;
-    }
- 
-    public void setProdutoMB(ProdutoMB prodmb) {
-        this.prodmb = prodmb;
-    }
- 
-    public Produto getSelectedProduto() {
-        return selectedProduto;
-    }
- 
-    public void setSelectedProduto(Produto selectedProduto) {
-        this.selectedProduto = selectedProduto;
-    }*/
-    
-    
+
+	/**
+	 * public List<Produto> getProdutos() { return produtos; }
+	 * 
+	 * public void setProdutoMB(ProdutoMB prodmb) { this.prodmb = prodmb; }
+	 * 
+	 * public Produto getSelectedProduto() { return selectedProduto; }
+	 * 
+	 * public void setSelectedProduto(Produto selectedProduto) {
+	 * this.selectedProduto = selectedProduto; }
+	 */
+
 }

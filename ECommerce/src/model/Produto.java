@@ -1,11 +1,14 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "prod")
 @ApplicationScoped
-public class Produto {
+public class Produto implements Serializable {
+	private static final long serialVersionUID = -5090043582156202896L;
 	
 	private int idProduto;
 	private String nome;

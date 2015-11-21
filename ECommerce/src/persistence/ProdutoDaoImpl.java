@@ -6,6 +6,7 @@ import java.util.List;
 import connection.ConnectionImpl;
 import connection.GenericConnection;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,8 +14,10 @@ import java.sql.SQLException;
 
 import model.Produto;
 
-public class ProdutoDaoImpl implements ProdutoDao {
+public class ProdutoDaoImpl implements ProdutoDao, Serializable {
 
+	private static final long serialVersionUID = -8597603272404903316L;
+	
 	private Connection c;
 
 	public ProdutoDaoImpl() {
