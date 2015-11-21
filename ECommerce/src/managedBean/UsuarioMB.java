@@ -37,7 +37,7 @@ public class UsuarioMB implements Serializable {
 				return "";
 			}else{
 				setLogado(true);
-				return"index.xhtml";
+				return"index";
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -79,6 +79,7 @@ public class UsuarioMB implements Serializable {
 	}
 	
 	public void logOff(ActionEvent e) {
+		usuario = new Usuario();
 		setLogado(false);
 	}
 	
