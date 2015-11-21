@@ -49,7 +49,7 @@
 							<h:commandButton action="#{usuarioMB.realizarLogin()}" 
 								actionListener="#{clienteMB.buscaCliente(usuarioMB.usuario)}"
 								value="Entrar" class="but">
-								<f:setPropertyActionListener value="#{clienteAtual}"
+								<f:setPropertyActionListener value="#{clienteMB.clienteAtual}"
 									target="#{clienteMB.clienteAtual}" />
 							</h:commandButton>
 						</h:panelGrid>

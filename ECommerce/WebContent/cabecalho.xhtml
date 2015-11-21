@@ -48,7 +48,7 @@
 					rendered="#{usuarioMB.naoLogado()}" />
 				<p:growl id="messages" showDetail="true" />
 
-				<p:menuButton value="#{usuarioMB.usuario.email}"
+				<p:menuButton value="#{clienteMB.clienteAtual.nome}"
 					rendered="#{usuarioMB.logado}">
 					<p:menuitem value="Alterar dados"
 						actionListener="#{logadoView.save}" update="messages"
