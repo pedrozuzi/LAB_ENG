@@ -5,14 +5,15 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class BuscaView {
 
-   private String busca;
+	private String textbusca;
 
-public String getBusca() {
-	return busca;
-}
+	public String getTextbusca() {
+		return textbusca;
+	}
 
-public void setBusca(String busca) {
-	this.busca = busca;
-}
-	
+	public void setTextbusca(String textbusca) {
+		this.textbusca = textbusca;
+	}
+
+
 }

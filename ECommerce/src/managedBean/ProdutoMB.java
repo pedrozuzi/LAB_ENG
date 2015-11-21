@@ -59,9 +59,9 @@ public class ProdutoMB implements Serializable {
 	 * @param nome
 	 * @return
 	 */
-	public List<Produto> pesquisar(String nome) {
+	public List<Produto> pesquisarNome(String nome) {
 		try {
-			listaPesquisa = produtoDao.pesquisaProduto(nome);
+			listaPesquisa = produtoDao.pesquisaProdutoNome(nome);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
