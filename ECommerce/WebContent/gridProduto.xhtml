@@ -19,8 +19,8 @@
 			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="6,12,16" styleClass="">
 			<f:facet name="header">
-           <!--   Venda de Produtos -->
-            </f:facet>
+				<!--   Venda de Produtos -->
+			</f:facet>
 
 			<p:panel header="#{produto.idProduto}" style="text-align:center">
 				<h:panelGrid columns="1" style="width:100%">
@@ -41,13 +41,10 @@
 					<p:growl id="growl" life="2000" />
 					<p:commandButton value="Adicionar ao Carrinho"
 						style="font-size:70%" id="withIcon"
-						actionListener="#{carrinhoMB.adiciona(produto)}"
-						update="growl" icon="ui-icon-plusthick">
-						
+						actionListener="#{carrinhoMB.adiciona(produto)}" update="growl"
+						icon="ui-icon-plusthick">
+
 					</p:commandButton>
-
-
-
 
 				</h:panelGrid>
 			</p:panel>
@@ -73,20 +70,26 @@
 					<h:outputText value="Nome" />
 					<h:outputText value="#{dataGridView.selectedProduto.nome}" />
 
-					<h:outputText value="Descrição:" />
-					<h:outputText value="#{dataGridView.selectedProduto.descricao}" />
-
 					<h:outputText value="Preço" />
 					<h:outputText value="$#{dataGridView.selectedProduto.valor}" />
 
-					<p:growl id="growl" life="2000" />
-					<p:commandButton value="Adicionar ao Carrinho"
-						style="font-size:70%" id="withIcon"
-						actionListener="#{carrinhoMB.adiciona(dataGridView.selectedProduto)}"
-						update="growl" icon="ui-icon-plusthick">
-					</p:commandButton>
+					<h:outputText value="Marca" />
+					<h:outputText value="#{dataGridView.selectedProduto.marca}" />
+
+					<h:outputText value="Descrição:" />
+					<h:outputText value="#{dataGridView.selectedProduto.descricao}" />
+
+					<h:outputText value="Categoria" />
+					<h:outputText value="#{dataGridView.selectedProduto.categoria}" />
 
 				</p:panelGrid>
+				<p:growl id="growl" life="2000" />
+				<p:commandButton value="Adicionar ao Carrinho" style="font-size:70%"
+					id="withIcon"
+					actionListener="#{carrinhoMB.adiciona(dataGridView.selectedProduto)}"
+					update="growl" icon="ui-icon-plusthick">
+				</p:commandButton>
+				
 			</p:outputPanel>
 		</p:dialog>
 	</h:form>

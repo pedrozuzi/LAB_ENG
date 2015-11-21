@@ -23,6 +23,8 @@
 			<p:commandButton value="Busca" style="width : 129px; height : 35px;"
 				id="busca" actionListener="#{dataGridView.prodmb.pesquisar(dataGridView.selectedProduto.nome)}"
 				 icon="ui-icon-search"/>
+			<p:watermark for="busca" value="Digite o nome do produto" id="watermark" />
+			
 			<p:spacer width="20"/>	
 			<h:form>
 				<p:commandLink id="lc" action="login.xhtml"
