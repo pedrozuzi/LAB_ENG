@@ -7,6 +7,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+
 import model.Usuario;
 import persistence.UsuarioDao;
 import persistence.UsuarioDaoImpl;
@@ -76,9 +78,11 @@ public class UsuarioMB implements Serializable {
 		}
 	}
 	
-	public String logOff(){
-		System.out.println(">>>>>>>>>LOG OF<<<<<<<<");
+	public void logOff(ActionEvent e) {
 		setLogado(false);
-		return "index";
+	}
+	
+	public String sair() {
+		return"index";
 	}
 }

@@ -23,7 +23,7 @@
 			<p:commandButton value="Busca" style="width : 129px; height : 35px;"
 				id="busca" actionListener="#{dataGridView.prodmb.pesquisar(dataGridView.selectedProduto.nome)}"
 				 icon="ui-icon-search"/>
-				
+			<p:spacer width="20"/>	
 			<h:form>
 				<p:commandLink id="lc" action="login.xhtml"
 					value="Entre ou Cadastre-se" class="login"
@@ -37,28 +37,15 @@
 						icon="ui-icon-disk" />
 					<p:menuitem value="Pedidos" actionListener="#{logadoView.update}"
 						update="messages" icon="ui-icon-arrowrefresh-1-w" />
-					<p:menuitem value="Sair" action="#{usuarioMB.logOff()}"
-						update="messages" icon="ui-icon-close" />
+					<p:menuitem value="Sair" actionListener="#{usuarioMB.logOff}" action="#{usuarioMB.sair}"
+						icon="ui-icon-close" ajax="false"/>
 					<p:separator />
 					<p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink" />
 				</p:menuButton>
-
-				<h:commandLink action="carrinho.xhtml" value="        Carrinho"
+				<p:spacer width="20"/>	
+				<h:commandLink action="carrinho.xhtml" value="Carrinho"
 					class="login" />
 			</h:form>
-			<!--  
-		<h:form>
-	<p:growl id="mensagem" showDetail="true"></p:growl>
-	<p:commandButton value="E" actionListener="#{dialogView.destroyWorld}" update="message">
-        <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
-    </p:commandButton>
- 
-    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-    </p:confirmDialog>
-	</h:form>
--->
 		</h:panelGrid>
 	</div>
 
