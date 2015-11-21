@@ -46,9 +46,10 @@
 							<h:inputSecret id="lsenha" value="#{usuarioMB.usuario.senha}"></h:inputSecret>
 							<h:message for="lsenha" />
 
-							<h:commandButton action="#{usuarioMB.realizarLogin()}"
+							<h:commandButton action="#{usuarioMB.realizarLogin()}" 
+								actionListener="#{clienteMB.buscaCliente(usuarioMB.usuario)}"
 								value="Entrar" class="but">
-								<f:setPropertyActionListener value="#{clienteMB.clienteAtual}"
+								<f:setPropertyActionListener value="#{clienteAtual}"
 									target="#{clienteMB.clienteAtual}" />
 							</h:commandButton>
 						</h:panelGrid>

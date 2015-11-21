@@ -112,18 +112,23 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public Cliente getClienteByIdUsuario(int id) throws SQLException {
+	public Cliente getCliente(String email) throws SQLException {
 		Cliente cli = new Cliente();
-		String query = "select * from cliente where idUsuario = ?";
+		String query = "select cliente.id, cliente.idUsuario, cliente.nome, cliente.telefone, "
+						+ "cliente.cep, cliente.uf, cliente.cidade, cliente.bairro, cliente.rua, "
+						+ "cliente.num, cliente.complemento from cliente "
+						+ "inner join usuario "
+						+ "on cliente.idUsuario = usuario.id "
+						+ "where usuario.email = ?";
 		
 		PreparedStatement ps = c.prepareStatement(query);
-		
+		ps.setString(1, email);
 		ResultSet rs = ps.executeQuery();
 		
 		if ( rs.next() ) {
 			Usuario u = new Usuario();
-			u.setIdUsuario(rs.getInt("idUsuario"));
 			cli.setIdCliente(rs.getInt("id"));
+			u.setIdUsuario(rs.getInt("idUsuario"));
 			cli.setUsuario(u);
 			cli.setNome(rs.getString("nome"));
 			cli.setTelefone(rs.getString("telefone"));

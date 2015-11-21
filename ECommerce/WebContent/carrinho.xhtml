@@ -44,6 +44,7 @@
 					</h:column>
 				</h:dataTable>
 			</h:panelGrid>
+			<h:outputLabel value="#{clienteMB.clienteAtual.nome}" />
 		</h:form>
 			<h:commandButton action="#{carrinhoMB.finalizarCompra()}" 
 							value="Finalizar Compra" rendered="#{carrinhoMB.itensCarrinho.size() > 0}"/>
