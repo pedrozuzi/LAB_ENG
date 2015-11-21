@@ -108,7 +108,7 @@ public class ProdutoDaoImpl implements ProdutoDao, Serializable {
 	
 	public List<Produto> pesquisaProdutoNome(String nome) throws SQLException {
 		List<Produto> lista = new ArrayList<Produto>();
-		String query = "select * from produto where nome like %?%"; // where id = ?
+		String query = "select * from produto where nome like ?"; // where id = ?
 		PreparedStatement ps = c.prepareStatement(query);
 		ps.setString(1, nome);
 		ResultSet rs = ps.executeQuery();

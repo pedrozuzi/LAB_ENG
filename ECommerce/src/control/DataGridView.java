@@ -27,10 +27,9 @@ public class DataGridView implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		
-		//	produtos = prodmb.pesquisar();
-		produtos = prodmb.getListaPesquisa();
-		
+
+		produtos = prodmb.pesquisar();
+
 	}
 
 	public List<Produto> getProdutos() {

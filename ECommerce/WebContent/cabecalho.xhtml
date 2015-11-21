@@ -20,7 +20,7 @@
 
 		<h:panelGrid columns="4">
 
-			<h:inputText id="keyword" value="#{produtoMB.produtoAtual.nome}"
+			<h:inputText id="keyword" value="#{dataGridView.prodmb.produtoAtual.nome}"
 				required="true" style="width: 450px; height: 29px;" />
 			<p:watermark for="keyword" value="Digite o nome do produto"
 				id="watermark" />
@@ -28,8 +28,10 @@
 			<h:form>
 
 				<p:commandButton id="regular"
-					actionListener="#{produtoMB.pesquisarNome()}" value="Pesquisa"
+					actionListener="#{dataGridView.setProdutos(dataGridView.prodmb.pesquisarNome())}" value="Pesquisa"
 					ajax="false" icon="ui-icon-search" />
+					
+					
 			</h:form>
 
 			<p:spacer width="20" />

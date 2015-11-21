@@ -61,7 +61,7 @@ public class ProdutoMB implements Serializable {
 	 */
 	public List<Produto> pesquisarNome() {
 		try {
-			listaPesquisa = produtoDao.pesquisaProdutoNome(produtoAtual.getNome());
+			this.listaPesquisa = produtoDao.pesquisaProdutoNome(produtoAtual.getNome());
 
 		} catch (SQLException e) {
 			e.printStackTrace();
