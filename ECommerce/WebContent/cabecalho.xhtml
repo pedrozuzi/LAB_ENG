@@ -19,19 +19,20 @@
 		<img width="15%" height="40%" src="imagens/logo2.png" alt="" title="" />
 
 		<h:panelGrid columns="4">
-
-			<h:inputText id="keyword" value="#{dataGridView.prodmb.produtoAtual.nome}"
-				required="true" style="width: 450px; height: 29px;" />
-			<p:watermark for="keyword" value="Digite o nome do produto"
-				id="watermark" />
-
 			<h:form>
 
+				<!-- <h:inputText value="#{dataGridView.busca}" /> -->
+				<h:inputText id="keyword" value="#{dataGridView.busca}"
+					required="true" style="width: 450px; height: 29px;" />
+				<p:watermark for="keyword" value="Digite o nome do produto"
+					id="watermark" />
+
+
 				<p:commandButton id="regular"
-					actionListener="#{dataGridView.setProdutos(dataGridView.prodmb.pesquisarNome())}" value="Pesquisa"
+					actionListener="#{dataGridView.pesquisarNome()}" value="Pesquisa"
 					ajax="false" icon="ui-icon-search" />
-					
-					
+
+
 			</h:form>
 
 			<p:spacer width="20" />

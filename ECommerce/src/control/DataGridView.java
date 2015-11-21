@@ -21,15 +21,16 @@ public class DataGridView implements Serializable {
 	private List<Produto> produtos;
 
 	private Produto selectedProduto;
+	
+	private String busca;
 
 	@ManagedProperty("#{produtoMB}")
 	private ProdutoMB prodmb;
 
 	@PostConstruct
 	public void init() {
-
+		//primeira pagina
 		produtos = prodmb.pesquisar();
-
 	}
 
 	public List<Produto> getProdutos() {
@@ -56,6 +57,19 @@ public class DataGridView implements Serializable {
 		this.prodmb = prodmb;
 	}
 
+	public String getBusca() {
+		return busca;
+	}
+
+	public void setBusca(String busca) {
+		this.busca = busca;
+	}
+
+	
+	public void pesquisarNome(){
+		produtos = prodmb.pesquisarNome(busca);
+	}
+	
 	/**
 	 * public List<Produto> getProdutos() { return produtos; }
 	 * 

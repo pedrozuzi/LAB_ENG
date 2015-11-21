@@ -110,7 +110,7 @@ public class ProdutoDaoImpl implements ProdutoDao, Serializable {
 		List<Produto> lista = new ArrayList<Produto>();
 		String query = "select * from produto where nome like ?"; // where id = ?
 		PreparedStatement ps = c.prepareStatement(query);
-		ps.setString(1, nome);
+		ps.setString(1, "%"+nome+"%");
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
