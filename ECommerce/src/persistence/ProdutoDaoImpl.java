@@ -103,7 +103,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		return lista;
 	}
 	
-	public List<Produto> pesquisaProduto(String nome) throws SQLException {
+	public List<Produto> pesquisaProdutoNome(String nome) throws SQLException {
 		List<Produto> lista = new ArrayList<Produto>();
 		String query = "select * from produto where nome like %?%"; // where id = ?
 		PreparedStatement ps = c.prepareStatement(query);
