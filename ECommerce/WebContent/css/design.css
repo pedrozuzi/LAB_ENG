@@ -44,6 +44,7 @@ body {
 	width: auto;
 	height: auto;
 	margin-bottom: 2px;
+	margin-left: 194px;
 }
 
 #menu {
@@ -61,6 +62,7 @@ body {
 	margin-bottom: 2px;
 	display: block;
 	background-color: #2eaeb7;
+	
 }
 
 #conteudo {
