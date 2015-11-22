@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Loja Virtual</title>
+	<title>ECommerce</title>
 	<link rel="stylesheet" type="text/css" href="css\principal.css" />
 	<link rel="stylesheet" type="text/css" href="css\design.css" />
+	
+	<link rel="icon" href="imagens/ico.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="imagens/ico.png"
+		type="image/x-icon" />
 </h:head>
 
 
 <h:body>
 
 	<div id="principal">
+		<div id="menu">
+			<ui:include src="/cabecalho.xhtml" />
+		</div>
+		<div id="cabecalho"><ui:include src="/rotatorio.xhtml" /></div>
 
-		<div id="cabecalho">cabecalho</div>
-		<div id="menu"> <ui:include src="/cabecalho.xhtml" />  </div>
-		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
-		<div id="conteudo"> <ui:include src="/gridProduto.xhtml" /> </div>
-		<div id="rodape">    <img width="890px" height="80px" src="imagens/formpag.png" alt="" title="" /></div>
+		<div id="coluna_esquerda">
+			<ui:include src="/menuLateral.xhtml" />
+		</div>
+		<div id="conteudo">
+			<ui:include src="/gridProduto.xhtml" />
+		</div>
+		<div id="rodape">
+			<img width="890px" height="80px" src="imagens/formpag.png" alt=""
+				title="" />
+		</div>
 	</div>
 
 </h:body>

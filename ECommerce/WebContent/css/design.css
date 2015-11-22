@@ -1,20 +1,39 @@
 body {
 	margin: 0;
-	background: url("bg.jpg") center
-		top no-repeat;
-	
+	background: url("bg.jpg") center top no-repeat;
 	/*background: url(http://localhost:8090/ECommerce/imagens/bg.jpg) center
 		top no-repeat;*/
 	background-color: #2eaeb7;
 }
 
-#index {
-	
+.icone_categoria {
+	text-align: left;
+	margin-left: 2px;
+	padding: 0;
+	width: 187px;
+	height: 42px;
+	background-image: url(../imagens/img_menu_azul.png);
+	background-repeat: no-repeat;
+
+}
+.h2titcategoria{
+    color: #ffffff;
+    font-family: "Swis721";
+    letter-spacing: 0px;
+    font-size: 14px;
+    color: #EEEEEE;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #4B4747;
+    font-weight: normal;
+    padding: 9px 0 0 46px;
+    margin: 5px 0 0 0;
 }
 
 #principal {
 	border: 1px solid black;
-	width: 950px;
+	width: 1100px;
 	height: auto;
 	margin: 0 auto;
 	padding: 2px;
@@ -23,7 +42,7 @@ body {
 #cabecalho {
 	border: 1px solid black;
 	width: auto;
-	height: 25px;
+	height: auto;
 	margin-bottom: 2px;
 }
 
@@ -36,8 +55,8 @@ body {
 
 #coluna_esquerda {
 	border: 1px solid black;
-	width: 160px;
-	height: 250;
+	width: 190px;
+	height: auto;
 	float: left;
 	margin-bottom: 2px;
 	display: block;
@@ -48,7 +67,7 @@ body {
 	border: 1px solid black;
 	width: auto;
 	height: auto;
-	margin-left: 164px;
+	margin-left: 194px;
 	margin-right: 0px;
 	margin-bottom: 2px;
 }

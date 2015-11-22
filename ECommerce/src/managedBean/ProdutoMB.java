@@ -73,6 +73,15 @@ public class ProdutoMB implements Serializable {
 		}
 		return listaPesquisa;
 	}
+	
+	public List<Produto> aleatorios(){
+		try {
+			listaPesquisa = produtoDao.pesquisaProduto(produtoAtual);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listaPesquisa;
+	}
 
 	void caregaProdutoUnico(int id) {
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Loja Virtual</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:carousel value="#{carouselView.produtos}" headerText="Promoção!"
+			var="produto" itemStyle="text-align:center" responsive="true"
+			autoPlayInterval="3000" circular="true">
+			<p:panelGrid columns="2" style="width:100%;margin:10px 0px"
+				columnClasses="label,value" layout="grid"
+				styleClass="ui-panelgrid-blank">
+				<f:facet name="header">
+					<p:graphicImage value="/imagens/#{produto.imagem}"
+						style="width:200px" height="150px" />
+				</f:facet>
+
+				<h:outputText value="#{produto.nome}" />
+				<h:outputText value="R$: #{produto.valor}" />
+			</p:panelGrid>
+
+		</p:carousel>
+	</h:form>
+
+</h:body>
+</html>
