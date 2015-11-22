@@ -19,12 +19,39 @@
 		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
 		<div id="conteudo">  
 		
-			<h:outputLabel> <h3> Meus Pedidos </h3> </h:outputLabel>
-		
+			<div id="cartao">
+				<h:form>
+				<h:panelGrid columns="2">
+					<h:outputText value="Forma de Pagamento : " />
+					<h:outputText value="COMBOBOX " />
+					
+					<h:outputText value="Nome descrito no cartão : " />
+					<h:inputText value="" />
+					
+					<h:outputText value="Número do cartão :  " />
+					<h:inputText value="" />
+					
+					<h:outputText value="Validade : " />
+					<h:inputText value="" />
+					
+					<h:outputText value="Código de Segurança : " />
+					<h:inputText value="" />
+					
+					<h:outputText value="CPF (Proprietário do cartão) : " />
+					<h:inputText value="" />
+					
+					<h:outputText value="Data de Nascimento : " />
+					<h:inputText value="" />
+				</h:panelGrid>
+				</h:form>
+			</div>
+			
+			<div id="boleto"  />
+				<h:commandButton class="but" value="Pagar via Boleto" />
+			</div>
+			
 		</div>
 		<div id="rodape">    <img width="890px" height="80px" src="imagens/formpag.png" alt="" title="" /></div>
-
-	</div>
 
 </h:body>
 </html>

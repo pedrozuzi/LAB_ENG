@@ -20,22 +20,66 @@
 		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
 		<div id="conteudo">
 		<h:form>
-			<h:outputLabel rendered="#{carrinhoMB.itensCarrinho.size() == 0}">
+		
+			<p:dataTable var="carrinho" rendered="#{carrinhoMB.itemPedido.size() > 0}" value="#{carrinhoMB.itemPedido}">
+				<f:facet name="header">
+					Produtos no Carrinho
+				</f:facet>
+				<p:column style=" width:16px ">
+					<p:rowToggler/>
+				</p:column>
+				<p:column headerText="Produto">
+					<h:outputText value="#{carrinho.produto.nome}"/>
+				</p:column>
+				<p:column headerText="Preço">
+					<h:outputText value="#{carrinho.produto.valor}"/>
+				</p:column>
+				<p:column>
+					<h:commandLink action="#{carrinhoMB.excluir( carrinho )}">remover</h:commandLink>
+					<f:facet name="header">Ações</f:facet>
+				</p:column>
+				
+				
+				<p:rowExpansion>
+				
+					<p:panelGrid columns="2" columnClasses="label, value" style=" width:300px ">
+						<f:facet name="header">
+							<p:graphicImage value="/imagens/#{carrinho.produto.imagem}" style="width:200px" height="150px"/>
+						</f:facet>
+						
+						<h:outputText value="ID" />
+						<h:outputText value="#{carrinho.produto.idProduto}" />
+						
+						<h:outputText value="Nome" />
+						<h:outputText value="#{carrinho.produto.nome}" />
+						
+						<h:outputText value="Marca" />
+						<h:outputText value="#{carrinho.produto.marca}" />
+						
+						<h:outputText value="Descrição" />
+						<h:outputText value="#{carrinho.produto.descricao}" />
+					</p:panelGrid>
+					
+				</p:rowExpansion>
+			
+			</p:dataTable>
+		<!--  
+			  <h:outputLabel rendered="#{carrinhoMB.itemPedido.size() == 0}">
 				<h2> Você não possui produtos no Carrinho </h2>
 			</h:outputLabel>	
-			<h:panelGrid rendered="#{carrinhoMB.itensCarrinho.size() > 0}">
+			<h:panelGrid rendered="#{carrinhoMB.itemPedido.size() > 0}">
 				<h2>Itens do Carrinho</h2>
-				<h:dataTable value="#{carrinhoMB.itensCarrinho}" var="carrinho" border="1">
-					<h:column>#{carrinho.idProduto}
+				<h:dataTable value="#{carrinhoMB.itemPedido}" var="carrinho" border="1">
+					<h:column>#{carrinho.produto.idProduto}
 						<f:facet name="header">Id</f:facet>
 					</h:column>
-					<h:column>#{carrinho.marca}
+					<h:column>#{carrinho.produto.marca}
 						<f:facet name="header">Marca</f:facet>
 					</h:column>
-					<h:column>#{carrinho.nome}
+					<h:column>#{carrinho.produto.nome}
 						<f:facet name="header">Produto</f:facet>
 					</h:column>
-					<h:column>#{carrinho.valor}
+					<h:column>#{carrinho.produto.valor}
 						<f:facet name="header">Preço</f:facet>
 					</h:column>
 					<h:column>
@@ -44,13 +88,23 @@
 					</h:column>
 				</h:dataTable>
 			</h:panelGrid>
-			<h:outputLabel value="#{clienteMB.clienteAtual.nome}" />
+			<h:outputLabel value="#{clienteMB.clienteAtual.nome}" />-->
+			
 		</h:form>
-			<h:commandButton action="#{carrinhoMB.finalizarCompra()}" 
-							value="Finalizar Compra" rendered="#{carrinhoMB.itensCarrinho.size() > 0}"/>
-		 	
+		<h:outputLabel rendered="#{carrinhoMB.itemPedido.size() == 0}">
+				<h2> Você não possui produtos no Carrinho </h2>
+			</h:outputLabel>
+		<h:form>
+			<h:commandButton class="but" action="#{carrinhoMB.finalizarCompra(clienteMB.clienteAtual)}"
+							value="Finalizar Compra" rendered="#{carrinhoMB.itemPedido.size() > 0}"/>
+			<br/><br/><br/>
+			<tr>
+				<td> <h:outputText value="Total à Pagar : " /> </td>
+				<td> <h:outputText value="#{carrinhoMB.totalAPagar()}" /> </td>
+			</tr>
+		 </h:form>
 		</div>
-		<div id="rodape">rodape</div>
+		<div id="rodape"><img width="890px" height="80px" src="imagens/formpag.png" alt="" title="" /></div>
 
 	</div>
 
