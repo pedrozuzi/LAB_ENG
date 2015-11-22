@@ -11,10 +11,9 @@
 	<title>ECommerce</title>
 	<link rel="stylesheet" type="text/css" href="css\principal.css" />
 	<link rel="stylesheet" type="text/css" href="css\design.css" />
-	
+
 	<link rel="icon" href="imagens/ico.png" type="image/x-icon" />
-	<link rel="shortcut icon" href="imagens/ico.png"
-		type="image/x-icon" />
+	<link rel="shortcut icon" href="imagens/ico.png" type="image/x-icon" />
 </h:head>
 
 
@@ -24,7 +23,7 @@
 		<div id="menu">
 			<ui:include src="/cabecalho.xhtml" />
 		</div>
-		
+
 
 		<div id="coluna_esquerda">
 			<ui:include src="/menuLateral.xhtml" />
@@ -32,13 +31,21 @@
 		<div id="conteudo">
 			<ui:include src="/gridProduto.xhtml" />
 		</div>
-		<div id="cabecalho"><ui:include src="/rotatorio.xhtml" /></div>
-		
+		<div id="cabecalho">
+			<ui:include src="/rotatorio.xhtml" />
+		</div>
+
 		<div id="rodape">
 			<img width="890px" height="80px" src="imagens/formpag.png" alt=""
 				title="" />
 		</div>
 	</div>
+
+	<p:stack icon="/imagens/stack.png" expanded="true">
+		<p:menuitem value="Contato" icon="/imagens/email.png" url="#" />
+		<p:menuitem value="Home" icon="/imagens/home.png" url="index.xhtml" />
+		<p:menuitem value="Carrinho" icon="/imagens/cart.png" url="carrinho.xhtml" />
+	</p:stack>
 
 </h:body>
 </html>
