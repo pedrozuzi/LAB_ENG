@@ -8,11 +8,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import managedBean.ProdutoMB;
 import model.Produto;
 
-@ManagedBean
+@ManagedBean(name = "dataGridView")
 @SessionScoped
 // @ViewScoped
 public class DataGridView implements Serializable {
@@ -24,6 +25,8 @@ public class DataGridView implements Serializable {
 	
 	private String busca;
 
+	private int categoria;
+	
 	@ManagedProperty("#{produtoMB}")
 	private ProdutoMB prodmb;
 
@@ -66,19 +69,29 @@ public class DataGridView implements Serializable {
 	}
 
 	
+	public int getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(int categoria) {
+		this.categoria = categoria;
+	}
+
+	
 	public void pesquisarNome(){
 		produtos = prodmb.pesquisarNome(busca);
 	}
 	
-	/**
-	 * public List<Produto> getProdutos() { return produtos; }
-	 * 
-	 * public void setProdutoMB(ProdutoMB prodmb) { this.prodmb = prodmb; }
-	 * 
-	 * public Produto getSelectedProduto() { return selectedProduto; }
-	 * 
-	 * public void setSelectedProduto(Produto selectedProduto) {
-	 * this.selectedProduto = selectedProduto; }
-	 */
+    public String pagPrincipal(){
+    	produtos = prodmb.pesquisar();
+    	return "index";
+    }
+    
+    public String pesquisaCateg(String cat){
+    	categoria = Integer.parseInt(cat);
+    	produtos = prodmb.pesquisaCategoria(categoria);
+    	return "index";
+    }
+
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -55,41 +56,65 @@
 					<p:menuitem value="Home" url="index.xhtml" icon="ui-icon-extlink" />
 				</p:menuButton>
 				<p:spacer width="20" />
-				<h:commandLink action="carrinho.xhtml" value="Carrinho"
-					class="login" />
+
+				<h:commandButton action="carrinho.xhtml" value="cart"
+					image="/imagens/cart.png" />
+				<!--   <h:commandLink action="carrinho.xhtml" value="Carrinho" class="login" /> -->
+
 			</h:form>
 		</h:panelGrid>
 	</div>
+	<h:form>
+		<div class="menu-container" style="background-color: #33b5e5">
+			<ul class="menu clearfix">
 
-	<div class="menu-container">
-		<ul class="menu clearfix">
-			<li><a href="index.xhtml">Home</a></li>
+				<li><h:commandLink action="#{dataGridView.pagPrincipal()}"
+						value="Home" /></li>
 
-			<li><a>Eletrodomestico</a>
-				<ul class="sub-menu">
-					<li><a href="#"> Geladeira </a></li>
-					<li><a href="#"> Fogão </a></li>
-				</ul></li>
+				<li><a>Eletrodomestico</a>
+					<ul class="sub-menu">
 
-			<li><a href="#">Informatica</a>
-				<ul class="sub-menu">
-					<li><a href="#"> NoteBook </a></li>
-					<li><a href="#"> Desktop </a></li>
-				</ul></li>
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(5)}" value="Geladeira">		
+							</h:commandLink></li>
 
-			<li><a href="#">Esporte</a>
-				<ul class="sub-menu">
-					<li><a href="#"> Futebol </a></li>
-					<li><a href="#"> Bicicleta </a></li>
-				</ul></li>
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(6)}" value="Fogão">		
+							</h:commandLink></li>
+					</ul></li>
 
-			<li><a href="#">Eletronico</a>
-				<ul class="sub-menu">
-					<li><a href="#"> TV LED </a></li>
-					<li><a href="#"> Smart TV </a></li>
-				</ul></li>
+				<li><a href="#">Informatica</a>
+					<ul class="sub-menu">
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(7)}" value="Nootbook">		
+							</h:commandLink></li>
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(8)}" value="Desktop">		
+							</h:commandLink></li>
+					</ul></li>
 
-		</ul>
-	</div>
+				<li><a href="#">Esporte</a>
+					<ul class="sub-menu">
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(9)}" value="Futebol">		
+							</h:commandLink></li>
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(10)}" value="Bicicleta">		
+							</h:commandLink></li>
+					</ul></li>
+
+				<li><a href="#">Eletronico</a>
+					<ul class="sub-menu">
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(11)}" value="TV LED">		
+							</h:commandLink></li>
+						<li><h:commandLink
+								action="#{dataGridView.pesquisaCateg(12)}" value="Smart TV">		
+							</h:commandLink></li>
+					</ul></li>
+
+			</ul>
+		</div>
+	</h:form>
 </h:body>
 </html>

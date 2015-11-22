@@ -23,7 +23,6 @@ public class ProdutoMB implements Serializable {
 
 	private Produto produtoAtual;
 	private ProdutoDao produtoDao;
-	
 
 	public ProdutoMB() {
 		produtoAtual = new Produto();
@@ -34,15 +33,20 @@ public class ProdutoMB implements Serializable {
 
 	}
 
-	public List<Produto> carregaProdrutoCategoria(int categoria) throws SQLException {
-		List<Produto> lista = new ArrayList<Produto>();
-		lista = produtoDao.pesquisaProdutoCategoria(categoria);
+	public List<Produto> pesquisaCategoria(int categoria) {
 
-		return lista;
+		try {
+			listaPesquisa = produtoDao.pesquisaProdutoCategoria(categoria);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return listaPesquisa;
 	}
 
 	/**
 	 * retorna todos os produtos
+	 * 
 	 * @return
 	 */
 	public List<Produto> pesquisar() {
@@ -53,9 +57,10 @@ public class ProdutoMB implements Serializable {
 		}
 		return listaPesquisa;
 	}
-	
+
 	/**
 	 * retorna os produtos encontrados a partir da busca por nome
+	 * 
 	 * @param nome
 	 * @return
 	 */
@@ -68,7 +73,6 @@ public class ProdutoMB implements Serializable {
 		}
 		return listaPesquisa;
 	}
-	
 
 	void caregaProdutoUnico(int id) {
 
@@ -105,9 +109,5 @@ public class ProdutoMB implements Serializable {
 	public void setProdutoDao(ProdutoDao produtoDao) {
 		this.produtoDao = produtoDao;
 	}
-	
-	
-	
-	
 
 }

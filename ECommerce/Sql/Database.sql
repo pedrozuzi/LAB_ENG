@@ -116,7 +116,7 @@ insert into produto values
 (13,'tv led',3000,'2k',11,'marca','tvled1.jpg'),
 (14,'tv led',5000,'4k',11,'marca','tvled2.jpg'),
 (15,'smart tv',6500,'Android',12,'marca','smart1.jpg'),
-(16,'smart tv',6000,'wifi',7,'marca','smart2.jpg')
+(16,'smart tv',6000,'wifi',12,'marca','smart2.jpg')
 
 -----------------------
 
@@ -151,14 +151,24 @@ as
 select Sub_Categoria from v_categoria where sub_categoria like 'nootbook'
 
 -------------------------------
-create VIEW v_prodcat
+alter VIEW v_prodcat
 as
-select prod.nome as Nome, cat.nome as Categoria, cat.idcat from produto prod
+select prod.id, prod.nome as nome, prod.valor, prod.descricao, prod.marca, prod.imagem, cat.nome as catnome, cat.idcat from produto prod
 inner join categoria cat
 on prod.categoria = cat.idcat
 ----
 where idcat = 5
 -----------------------------
-select * from v_prodcat where idcat = 5
+select * from v_prodcat where idcat = 12
 
 select * from produto
+
+id int not null,
+nome varchar (100),
+valor decimal(7,2),
+descricao varchar(max),
+categoria int,
+marca varchar(40),
+imagem varchar(40)
+primary key(id)
+foreign key (categoria) references categoria (idcat

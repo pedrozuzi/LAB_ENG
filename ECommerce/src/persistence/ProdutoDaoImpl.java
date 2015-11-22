@@ -146,7 +146,7 @@ public class ProdutoDaoImpl implements ProdutoDao, Serializable {
 			p.setNome(rs.getString("nome"));
 			p.setValor(rs.getDouble("valor"));
 			p.setDescricao(rs.getString("descricao"));
-			p.setCategoria(rs.getInt("categoria"));
+			p.setCategoria(rs.getInt("idcat"));
 			p.setMarca(rs.getString("marca"));
 			p.setImagem(rs.getString("imagem"));
 
