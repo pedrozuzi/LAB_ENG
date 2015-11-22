@@ -1,6 +1,14 @@
 body {
 	margin: 0;
+	background: url(http://localhost:8090/ECommerce/imagens/bg.jpg) center
+		top no-repeat;
+	background-color: #2eaeb7;
 }
+
+#index {
+	
+}
+
 #principal {
 	border: 1px solid black;
 	width: 950px;
@@ -30,19 +38,16 @@ body {
 	float: left;
 	margin-bottom: 2px;
 	display: block;
+	background-color: #ffffff;
 }
-
 
 #conteudo {
 	border: 1px solid black;
-	
 	width: auto;
 	height: auto;
-	
 	margin-left: 164px;
 	margin-right: 0px;
 	margin-bottom: 2px;
-	
 }
 
 #rodape {
