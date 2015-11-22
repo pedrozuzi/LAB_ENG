@@ -15,7 +15,6 @@
 
 		<div id="principal">
 
-		<div id="cabecalho">cabecalho</div>
 		<div id="menu"> <ui:include src="/cabecalho.xhtml" />  </div>
 		<div id="coluna_esquerda"><ui:include src="/menuLateral.xhtml" /></div>
 		<div id="conteudo">
@@ -91,7 +90,7 @@
 			<h:outputLabel value="#{clienteMB.clienteAtual.nome}" />-->
 			
 		</h:form>
-		<h:outputLabel rendered="#{carrinhoMB.itemPedido.size() == 0}">
+		<h:outputLabel style="color: #ffffff;" rendered="#{carrinhoMB.itemPedido.size() == 0}">
 				<h2> Você não possui produtos no Carrinho </h2>
 			</h:outputLabel>
 		<h:form>
@@ -99,8 +98,9 @@
 							value="Finalizar Compra" rendered="#{carrinhoMB.itemPedido.size() > 0}"/>
 			<br/><br/><br/>
 			<tr>
-				<td> <h:outputText value="Total à Pagar : " /> </td>
-				<td> <h:outputText value="#{carrinhoMB.totalAPagar()}" /> </td>
+				<td> <h2> 
+					<h:outputText style="color: #ffffff;" value="Total à Pagar : #{carrinhoMB.totalAPagar()}" /> 
+				</h2> </td>
 			</tr>
 		 </h:form>
 		</div>
