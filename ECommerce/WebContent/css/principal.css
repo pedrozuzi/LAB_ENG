@@ -133,7 +133,7 @@ html {
     font-family: "Lucida Sans", sans-serif;
 }
 .header {
-    background-color: #9933cc;
+    background-color: #31ACBF;
     color: #ffffff;
     padding: 15px;
 }
@@ -176,7 +176,7 @@ body,
     position: relative;
     padding: 8px;
     margin-bottom: 7px;
-    background-color :#33b5e5;
+    background-color :#21737F;
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -226,8 +226,8 @@ body,
 }
 
 .login {
-	background-color: #9933cc;
-	color: #ffffff;
+	background-color: #32ADBF;
+	color: #113A40;
 }
 
 /*divs principais*/
