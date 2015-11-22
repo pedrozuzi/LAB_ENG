@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import model.Produto;
 
+
 @ManagedBean
 @SessionScoped
 public class CarrinhoMB {
@@ -44,5 +45,4 @@ public class CarrinhoMB {
 		System.out.println(p.getNome());
 		this.itensCarrinho.remove(p);
 	}
-	
 }

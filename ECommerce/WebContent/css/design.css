@@ -1,7 +1,10 @@
 body {
 	margin: 0;
-	background: url(http://localhost:8090/ECommerce/imagens/bg.jpg) center
+	background: url("bg.jpg") center
 		top no-repeat;
+	
+	/*background: url(http://localhost:8090/ECommerce/imagens/bg.jpg) center
+		top no-repeat;*/
 	background-color: #2eaeb7;
 }
 
@@ -38,7 +41,7 @@ body {
 	float: left;
 	margin-bottom: 2px;
 	display: block;
-	background-color: #ffffff;
+	background-color: #2eaeb7;
 }
 
 #conteudo {
