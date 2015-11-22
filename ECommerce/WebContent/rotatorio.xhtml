@@ -27,7 +27,12 @@
 				<h:outputText value="#{produto.nome}" />
 				<h:outputText value="R$: #{produto.valor}" />
 			</p:panelGrid>
-
+				<!-- Botão Carrinho -->
+				<p:growl id="growl" life="2000" />
+				<p:commandButton value="Adicionar ao Carrinho" style="font-size:65%"
+					id="withIcon" actionListener="#{carrinhoMB.adiciona(produto)}"
+					update="growl" icon="ui-icon-plusthick">
+				</p:commandButton>
 		</p:carousel>
 	</h:form>
 
