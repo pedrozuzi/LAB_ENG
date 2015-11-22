@@ -9,35 +9,52 @@
 	<title>Loja Virtual</title>
 </h:head>
 
+
+
 <h:body>
+<h:form>
 	<div class="icone_categoria">
 		<h2 class="h2titcategoria">Eletrodomestico</h2>
 	</div>
 
-	<li>Geladeira</li>
-	<li>Fogão</li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(5)}"
+			value="Geladeira">
+		</h:commandLink></li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(6)}"
+				value="Fogão">
+			</h:commandLink></li>
 
 	<div class="icone_categoria">
 		<h2 class="h2titcategoria">Informatica</h2>
 	</div>
 
-	<li>Nootbook</li>
-	<li>DeskTop</li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(7)}"
+				value="Nootbook"/></li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(8)}"
+				value="Desktop"/></li>
 
 	<div class="icone_categoria">
 		<h2 class="h2titcategoria">Esporte</h2>
 	</div>
 
-	<li>Futebol</li>
-	<li>Bicicleta</li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(9)}"
+				value="Futebol">
+			</h:commandLink></li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(10)}"
+				value="Bicicleta">
+			</h:commandLink></li>
 
 	<div class="icone_categoria">
 		<h2 class="h2titcategoria">Eletronicos</h2>
 	</div>
 
-	<li>Tv Led</li>
-	<li>Smart TV</li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(11)}"
+				value="TV LED">
+			</h:commandLink></li>
+	<li><h:commandLink action="#{dataGridView.pesquisaCateg(12)}"
+				value="Smart TV">
+			</h:commandLink></li>
 
-
+</h:form>
 </h:body>
 </html>
