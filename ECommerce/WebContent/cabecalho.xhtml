@@ -21,18 +21,14 @@
 
 		<h:panelGrid columns="4">
 			<h:form>
-
-				<!-- <h:inputText value="#{dataGridView.busca}" /> -->
 				<h:inputText id="keyword" value="#{dataGridView.busca}"
 					required="true" style="width: 450px; height: 29px;" />
 				<p:watermark for="keyword" value="Digite o nome do produto"
 					id="watermark" />
 
-
 				<p:commandButton id="regular"
 					actionListener="#{dataGridView.pesquisarNome()}" value="Pesquisa"
 					ajax="false" icon="ui-icon-search" />
-
 
 			</h:form>
 
@@ -59,7 +55,6 @@
 
 				<h:commandButton action="carrinho.xhtml" value="cart"
 					image="/imagens/cart.png" />
-				<!--   <h:commandLink action="carrinho.xhtml" value="Carrinho" class="login" /> -->
 
 			</h:form>
 		</h:panelGrid>

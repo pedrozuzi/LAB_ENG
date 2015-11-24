@@ -23,7 +23,9 @@
 				<h:form>
 				<h:panelGrid columns="2">
 					<h:outputText value="Forma de Pagamento : " />
-					<h:outputText value="COMBOBOX " />
+					<h:selectOneMenu>
+						<f:selectItems value="#{carrinhoMB.parcelas()}"/>
+					</h:selectOneMenu>
 					
 					<h:outputText value="Nome descrito no cartão : " />
 					<h:inputText value="" />
@@ -45,9 +47,9 @@
 				</h:panelGrid>
 				</h:form>
 			</div>
-			
+			<br /><br /><br />
 			<div id="boleto"  />
-				<h:commandButton class="but" value="Pagar via Boleto" />
+				<h:commandButton class="but" value="Realizar Pagamento" />
 			</div>
 			
 		</div>

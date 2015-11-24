@@ -20,8 +20,18 @@ public class CarrinhoMB implements Serializable{
 	private static final long serialVersionUID = -9190430576650211038L;
 	private Pedido pedido;
 	private List<ItemPedido> itemPedido;
+	private List<String> formaPagamento;
 	
+	public List<String> getFormaPagamento() {
+		return formaPagamento;
+	}
+
+	public void setFormaPagamento(List<String> formaPagamento) {
+		this.formaPagamento = formaPagamento;
+	}
+
 	public CarrinhoMB() {
+		formaPagamento = new ArrayList<String>();
 		itemPedido = new ArrayList<ItemPedido>();
 		pedido = new Pedido();
 	}
@@ -36,6 +46,7 @@ public class CarrinhoMB implements Serializable{
 	}
 	
 	public String finalizarCompra(Cliente cliente) {
+		pedido = new Pedido();
 		PedidoControl pedidoControl = new PedidoControl();
 		double total;
 		total = totalAPagar();
@@ -46,7 +57,6 @@ public class CarrinhoMB implements Serializable{
 		
 		pedidoControl.gravarPedido(pedido);
 		
-		pedido = new Pedido();
 		return"pagamento";
 	}
 	
@@ -72,6 +82,17 @@ public class CarrinhoMB implements Serializable{
 
 	public void setItemPedido(List<ItemPedido> itemPedido) {
 		this.itemPedido = itemPedido;
+	}
+	
+	public List<String> parcelas() {
+		formaPagamento = new ArrayList<String>();
+		formaPagamento.add("1x " + pedido.getValorTotal());
+		formaPagamento.add("2x " + pedido.getValorTotal() / 2);
+		formaPagamento.add("3x " + pedido.getValorTotal() / 3);
+		formaPagamento.add("4x " + pedido.getValorTotal() / 4);
+		formaPagamento.add("5x " + pedido.getValorTotal() / 5);
+		formaPagamento.add("6x " + pedido.getValorTotal() / 6);
+		return formaPagamento;
 	}
 
 }
