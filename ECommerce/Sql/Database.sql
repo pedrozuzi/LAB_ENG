@@ -92,7 +92,7 @@ insert into categoria values
 (3,null,'Esporte'),
 (4,null,'Eletronica'),
 (5,1,'Geladeira'),
-(6,1,'Fog�o'),
+(6,1,'Fogão'),
 (7,2,'Notebook'),
 (8,2,'Desktop'),
 (9,3,'Futebol'),
@@ -103,9 +103,9 @@ insert into categoria values
 insert into produto values
 (1,'geladeira',1500,'com geloplux',5,'consul','geladeira1.jpg'),
 (2,'geladeira',1100,'sem geloplux',5,'eletrolux','geladeira2.jpg'),
-(3,'fog�o',900,'eletrico',6,'marca','fogao1.jpg'),
-(4,'fog�o',700,'gas encanado',6,'macra','fogao2.jpg'),
-(5,'notebook',2000,'I7 4� gera��o',7,'marca','nootbook1.jpg'),
+(3,'fogão',900,'eletrico',6,'marca','fogao1.jpg'),
+(4,'fogão',700,'gas encanado',6,'macra','fogao2.jpg'),
+(5,'notebook',2000,'I7 4° geração',7,'marca','nootbook1.jpg'),
 (6,'notebook',1200,'celeron',7,'marca','nootbook2.jpg'),
 (7,'desktop',3000,'PC Gamer',8,'marca','desktop1.jpg'),
 (8,'desktop',1500,'i3',8,'marca','desktop2.jpg'),
@@ -133,9 +133,9 @@ insert into cliente values
 ---------
 
 /**
-View responsavel pela apresentação das categorias e suas sub-Categorias.
+View responsavel pela apresentaÃ§Ã£o das categorias e suas sub-Categorias.
 */
-
+--------------------------
 CREATE VIEW v_categoria
 as
     SELECT 
@@ -147,28 +147,23 @@ as
             categoria cat 
             ON sub.idsubcat 
             =  cat.idcat
-----------------------------            
+----------------------------   
+
+
 select Sub_Categoria from v_categoria where sub_categoria like 'nootbook'
 
 -------------------------------
-alter VIEW v_prodcat
+
+CREATE VIEW v_prodcat
 as
 select prod.id, prod.nome as nome, prod.valor, prod.descricao, prod.marca, prod.imagem, cat.nome as catnome, cat.idcat from produto prod
 inner join categoria cat
 on prod.categoria = cat.idcat
-----
-where idcat = 5
+
+-------------------------------
+
+
+
 -----------------------------
 select * from v_prodcat where idcat = 12
 
-select * from produto
-
-id int not null,
-nome varchar (100),
-valor decimal(7,2),
-descricao varchar(max),
-categoria int,
-marca varchar(40),
-imagem varchar(40)
-primary key(id)
-foreign key (categoria) references categoria (idcat
