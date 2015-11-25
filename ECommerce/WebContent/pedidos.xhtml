@@ -23,47 +23,19 @@
 			
 			<h:form>
 		
-			<p:dataTable var="carrinho" rendered="#{carrinhoMB.itemPedido.size() > 0}" value="#{carrinhoMB.itemPedido}">
+			<p:dataTable var="pedidos" rendered="#{pedidosMB.pedido.size() > 0}" value="#{pedidosMB.buscaPedidos()}">
 				<f:facet name="header">
-					Produtos no Carrinho
+					Pedidos realizados
 				</f:facet>
-				<p:column style=" width:16px ">
-					<p:rowToggler/>
+				<p:column headerText="Cod Pedido">
+					<h:outputText value="#{pedidos.idPedido}"/>
 				</p:column>
-				<p:column headerText="Produto">
-					<h:outputText value="#{carrinho.produto.nome}"/>
+				<p:column headerText="Data">
+					<h:outputText value="#{pedidos.data}"/>
 				</p:column>
-				<p:column headerText="Preço">
-					<h:outputText value="#{carrinho.produto.valor}"/>
+				<p:column headerText="Valor do Pedido">
+					<h:outputText value="#{pedidos.valorTotal}"/>
 				</p:column>
-				<p:column>
-					<h:commandLink action="#{carrinhoMB.excluir( carrinho )}">remover</h:commandLink>
-					<f:facet name="header">Ações</f:facet>
-				</p:column>
-				
-				
-				<p:rowExpansion>
-				
-					<p:panelGrid columns="2" columnClasses="label, value" style=" width:300px ">
-						<f:facet name="header">
-							<p:graphicImage value="/imagens/#{carrinho.produto.imagem}" style="width:200px" height="150px"/>
-						</f:facet>
-						
-						<h:outputText value="ID" />
-						<h:outputText value="#{carrinho.produto.idProduto}" />
-						
-						<h:outputText value="Nome" />
-						<h:outputText value="#{carrinho.produto.nome}" />
-						
-						<h:outputText value="Marca" />
-						<h:outputText value="#{carrinho.produto.marca}" />
-						
-						<h:outputText value="Descrição" />
-						<h:outputText value="#{carrinho.produto.descricao}" />
-					</p:panelGrid>
-					
-				</p:rowExpansion>
-			
 			</p:dataTable>
 			
 		</h:form>
