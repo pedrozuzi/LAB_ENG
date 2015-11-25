@@ -28,22 +28,22 @@
 					</h:selectOneMenu>
 					
 					<h:outputText value="Nome descrito no cartão : " />
-					<h:inputText/>
+					<p:inputMask mask=""></p:inputMask>
 					
 					<h:outputText value="Número do cartão :  " />
-					<h:inputText />
+					<p:inputMask mask="9999.9999.9999.9999"></p:inputMask>
 					
 					<h:outputText value="Validade : " />
-					<h:inputText  />
+					<p:inputMask mask="99/99"></p:inputMask>
 					
 					<h:outputText value="Código de Segurança : " />
-					<h:inputText  />
+					<p:inputMask mask="999"></p:inputMask>
 					
 					<h:outputText value="CPF (Proprietário do cartão) : " />
-					<h:inputText  />
+					<p:inputMask mask="999.999.999-99"></p:inputMask>
 					
 					<h:outputText value="Data de Nascimento : " />
-					<h:inputText />
+					<p:inputMask mask="99/99/9999"></p:inputMask>
 				</h:panelGrid>
 				<br /><br />
 				<h:commandButton class="but" value="Realizar Pagamento" action="#{carrinhoMB.fecharPagamento}"/>
