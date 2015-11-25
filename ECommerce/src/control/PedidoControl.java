@@ -1,5 +1,7 @@
 package control;
 
+import java.sql.SQLException;
+
 import model.Pedido;
 import persistence.PedidoDao;
 import persistence.PedidoDaoImpl;
@@ -10,6 +12,10 @@ public class PedidoControl {
 	
 	public void gravarPedido(Pedido p) {
 		pDao = new PedidoDaoImpl();
-		pDao.incluiPedido(p);
+		try {
+			pDao.incluiPedido(p);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

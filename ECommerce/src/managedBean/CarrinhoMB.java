@@ -4,10 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+
+import control.ItemControl;
 import control.PedidoControl;
 import model.Cliente;
 import model.ItemPedido;
@@ -16,7 +19,7 @@ import model.Produto;
 
 @ManagedBean
 @SessionScoped
-public class CarrinhoMB implements Serializable{
+public class CarrinhoMB implements Serializable {
 	private static final long serialVersionUID = -9190430576650211038L;
 	private Pedido pedido;
 	private List<ItemPedido> itemPedido;
@@ -47,15 +50,12 @@ public class CarrinhoMB implements Serializable{
 	
 	public String finalizarCompra(Cliente cliente) {
 		pedido = new Pedido();
-		PedidoControl pedidoControl = new PedidoControl();
 		double total;
 		total = totalAPagar();
 		pedido.setCliente(cliente);
 		pedido.setData(new Date());
 		pedido.setItemPedido(itemPedido);
 		pedido.setValorTotal(total);
-		
-		pedidoControl.gravarPedido(pedido);
 		
 		return"pagamento";
 	}
@@ -93,6 +93,17 @@ public class CarrinhoMB implements Serializable{
 		formaPagamento.add("5x " + pedido.getValorTotal() / 5);
 		formaPagamento.add("6x " + pedido.getValorTotal() / 6);
 		return formaPagamento;
+	}
+	
+	public String fecharPagamento() {
+		PedidoControl pedidoControl = new PedidoControl();
+		ItemControl itemControl = new ItemControl();
+		pedidoControl.gravarPedido(pedido);
+		itemPedido.forEach( i -> itemControl.incluiItem(i, pedido.getIdPedido()) );
+		
+		FacesContext fc = FacesContext.getCurrentInstance();
+		fc.addMessage(null, new FacesMessage("Pagamento realizado com sucesso!!" ));
+		return"index";
 	}
 
 }

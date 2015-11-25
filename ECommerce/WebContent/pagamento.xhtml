@@ -28,30 +28,30 @@
 					</h:selectOneMenu>
 					
 					<h:outputText value="Nome descrito no cartão : " />
-					<h:inputText value="" />
+					<h:inputText/>
 					
 					<h:outputText value="Número do cartão :  " />
-					<h:inputText value="" />
+					<h:inputText />
 					
 					<h:outputText value="Validade : " />
-					<h:inputText value="" />
+					<h:inputText  />
 					
 					<h:outputText value="Código de Segurança : " />
-					<h:inputText value="" />
+					<h:inputText  />
 					
 					<h:outputText value="CPF (Proprietário do cartão) : " />
-					<h:inputText value="" />
+					<h:inputText  />
 					
 					<h:outputText value="Data de Nascimento : " />
-					<h:inputText value="" />
+					<h:inputText />
 				</h:panelGrid>
+				<br /><br />
+				<h:commandButton class="but" value="Realizar Pagamento" action="#{carrinhoMB.fecharPagamento}"/>
 				</h:form>
 			</div>
-			<br /><br /><br />
-			<div id="boleto"  />
-				<h:commandButton class="but" value="Realizar Pagamento" />
-			</div>
 			
+				
+			</div>
 		</div>
 		<div id="rodape">    <img width="890px" height="80px" src="imagens/formpag.png" alt="" title="" /></div>
 

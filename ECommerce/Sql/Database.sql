@@ -8,7 +8,7 @@ drop database ecommerce
 create table usuario(
 
 id int not null identity primary key,
-email VARCHAR(320),
+email VARCHAR(320) unique,
 --senha varbinary(32),
 senha varchar(32),
 )
@@ -41,7 +41,7 @@ primary key(id)
 
 create table pedido(
 
-id int not null,
+id int not null identity,
 data datetime not null,
 valor decimal(7,2) not null
 primary key (id)
@@ -75,7 +75,6 @@ foreign key (categoria) references categoria (idcat)
 create table itempedido(
 
 valor decimal(7,2) not null,
-quantidade int not null,
 idProduto int not null,
 idPedido int not null
 foreign key (idProduto) references produto(id),
@@ -166,4 +165,3 @@ on prod.categoria = cat.idcat
 
 -----------------------------
 select * from v_prodcat where idcat = 12
-
